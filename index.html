@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>iOS + AI Roadmap</title>
+<style>
+:root{--bg:#fafafa;--card:#fff;--ink:#1a1a1a;--mut:#666;--line:#e5e5e5;--acc:#0b6bcb;--chip:#eef2f7}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1116;--card:#161b22;--ink:#e6edf3;--mut:#9aa4b2;--line:#232b36;--acc:#4aa3ff;--chip:#1c2530}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:32px 20px 80px}
+h1{font-size:30px;margin:0 0 6px}
+.sub{color:var(--mut);margin:0 0 24px}
+.thesis{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--acc);border-radius:10px;padding:16px 18px;margin:0 0 24px}
+.thesis p{margin:6px 0}
+h2.cluster-h{font-size:14px;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);margin:38px 0 12px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.arc{margin:0 0 28px}
+.arc-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px}
+.arc-head h3{font-size:20px;margin:14px 0 4px}
+.arc-meta{display:flex;gap:8px;flex-wrap:wrap}
+.arc-meta span{font-size:12px;color:var(--mut);background:var(--chip);border-radius:20px;padding:2px 10px}
+.arc-intro{color:var(--mut);margin:2px 0 14px;font-size:14.5px}
+.lesson{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:0 0 12px}
+.lesson-top{display:flex;gap:10px;align-items:baseline}
+.lid{font-weight:700;color:var(--acc);font-size:13px;flex:none}
+.lesson-top h4{margin:0;font-size:16.5px}
+.chips{margin:6px 0 8px;display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-size:11.5px;color:var(--mut);background:var(--chip);border-radius:20px;padding:2px 9px}
+.lesson p{margin:6px 0;font-size:14.5px}
+.sources{margin:8px 0;font-size:14px}
+.sources ul{margin:4px 0 0;padding-left:18px}
+.sources li{margin:3px 0;color:var(--mut)}
+.sources a{color:var(--acc);text-decoration:none}
+.sources a:hover{text-decoration:underline}
+.track{display:inline-block;margin-top:8px;font-size:13px;color:var(--acc);text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:3px 12px}
+.track:hover{border-color:var(--acc)}
+table.sched{width:100%;border-collapse:collapse;margin:0 0 8px;font-size:14px}
+.sched th,.sched td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+.sched th{color:var(--mut);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em}
+.sched tr.tot td{font-weight:700}
+.overflow{overflow-x:auto}
+footer{margin-top:40px;color:var(--mut);font-size:13px;border-top:1px solid var(--line);padding-top:16px}
+footer a{color:var(--acc);text-decoration:none}
+</style></head><body><div class="wrap">
+<h1>iOS + AI Roadmap</h1>
+<p class="sub">Senior/lead iOS engineer, always interview-ready, leading in the AI era. Sustainable pace, ~4-6h/week.</p>
+<div class="thesis">
+<p><strong>Thesis.</strong> Stay a top-tier senior/lead iOS engineer, always interview-ready, who <em>leads</em> in the AI era, not just uses tools. No active loop, so this is a weekly cadence, not a sprint.</p>
+<p><strong>How it runs.</strong> One Depth focus arc at a time (0 → 1 → 2), plus a light always-on layer: 1-2 DSA problems, a rehearsed system-design prompt, and the newsletter each week. Every arc ends in an artifact. Blog posts on <a href="https://bitswithlucas.com" target="_blank" rel="noopener">bitswithlucas.com</a> count.</p>
+</div>
+<div class="overflow"><table class="sched"><thead><tr><th>Arc</th><th>Effort</th><th>Window (~5h/wk)</th><th>Target end</th></tr></thead><tbody>
+<tr><td>Arc 0: Core refresh</td><td>~24.5h</td><td>Jul 21 → Aug 23</td><td>~Aug 23</td></tr>
+<tr><td>Arc 1: On-device AI</td><td>~22h</td><td>Aug 24 → Sep 24</td><td>~Sep 24</td></tr>
+<tr><td>Arc 2: System design</td><td>~16.5h</td><td>Sep 25 → Oct 18</td><td>~Oct 18</td></tr>
+<tr class="tot"><td>Depth complete</td><td>~63h</td><td></td><td>~mid-Oct 2026</td></tr>
+</tbody></table></div>
+<section class="cluster"><h2 class="cluster-h">Depth (craft)</h2><div class="arc"><div class="arc-head"><h3>Arc 0: Core iOS refresh (hands-on)</h3><div class="arc-meta"><span class="win">2026-07-20 → 2026-08-23</span><span class="eff">~24.5h</span><span class="cnt">12 lessons</span></div></div><p class="arc-intro">Rebuild the modern iOS core muscle (2021 to 2026) by writing it myself in small examples, not whole apps. Done with Arc 0 = I can build a small SwiftUI screen that fetches data, holds state, runs concurrent work safely, and has a test, all from scratch without looking things up. Each lesson is one playground or mini-view.</p><article class="lesson" id="arc-0-core-refresh-l1">
+<div class="lesson-top"><span class="lid">L1</span><h4>First SwiftUI screen (views, @State, layout)</h4></div>
+<div class="chips"><span class="chip">~2h</span> <span class="chip">intro</span> <span class="chip">hands-on</span></div>
+<p class="goal"><strong>Goal.</strong> Build a screen with stacks, a few controls, and `@State` that mutates on tap.</p>
+
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://www.hackingwithswift.com/quick-start/swiftui" target="_blank" rel="noopener">Hacking with Swift: SwiftUI by Example, Views and Controls</a> : the &quot;Views and controls&quot; section, build the basic controls once.</li><li><a href="https://developer.apple.com/tutorials/swiftui" target="_blank" rel="noopener">Apple: SwiftUI Essentials / tutorials</a> : &quot;Creating and Combining Views&quot;, follow it in Xcode.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> A profile card view: `VStack` with image, name, a toggle that shows/hides a bio via `@State`.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Coming back to SwiftUI after years of UIKit: the 5 mental-model shifts that clicked.&quot;</p>
+<p class="done"><strong>Done when.</strong> I can lay out a screen and drive it with `@State` without a reference open.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/1" target="_blank" rel="noopener">Track: issue #1</a>
+</article><article class="lesson" id="arc-0-core-refresh-l2">
+<div class="lesson-top"><span class="lid">L2</span><h4>Data flow (@State, @Binding, @Bindable)</h4></div>
+<div class="chips"><span class="chip">~2h</span> <span class="chip">core</span> <span class="chip">hands-on</span></div>
+<p class="goal"><strong>Goal.</strong> Pass mutable state down to child views correctly and know which wrapper to use.</p>
+<p class="prereq"><strong>Prereq.</strong> L1</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://www.hackingwithswift.com/quick-start/swiftui/all-swiftui-property-wrappers-explained-and-compared" target="_blank" rel="noopener">Hacking with Swift: How @State, @Binding work</a> : the property-wrapper comparison, read end to end.</li><li><a href="https://developer.apple.com/documentation/swiftui/managing-user-interface-state" target="_blank" rel="noopener">Apple: Managing user interface state</a> : the canonical reference.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> A parent list + a child editor view bound to the selected item via `@Binding`; edits reflect immediately in the parent.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;@State vs @Binding vs @Bindable: a decision table for SwiftUI state.&quot;</p>
+<p class="done"><strong>Done when.</strong> I can explain in one sentence each when to reach for `@State`, `@Binding`, `@Bindable`.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/2" target="_blank" rel="noopener">Track: issue #2</a>
+</article><article class="lesson" id="arc-0-core-refresh-l3">
+<div class="lesson-top"><span class="lid">L3</span><h4>Lists, ForEach, and rendering collections</h4></div>
+<div class="chips"><span class="chip">~1.5h</span> <span class="chip">core</span> <span class="chip">hands-on</span></div>
+<p class="goal"><strong>Goal.</strong> Render and mutate a collection with stable identity.</p>
+<p class="prereq"><strong>Prereq.</strong> L2</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://www.hackingwithswift.com/quick-start/swiftui" target="_blank" rel="noopener">Hacking with Swift: Lists and ForEach</a> : the &quot;Lists&quot; section.</li><li><a href="https://developer.apple.com/documentation/swiftui/list" target="_blank" rel="noopener">Apple: List documentation</a> : sections, selection, swipe actions.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> A todo list with add, delete (swipe), and reorder; items are `Identifiable`.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Identifiable and why your SwiftUI list animates wrong without it.&quot;</p>
+<p class="done"><strong>Done when.</strong> I can build a mutable list with correct identity and no console warnings.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/3" target="_blank" rel="noopener">Track: issue #3</a>
+</article><article class="lesson" id="arc-0-core-refresh-l4">
+<div class="lesson-top"><span class="lid">L4</span><h4>NavigationStack + enum-driven routing</h4></div>
+<div class="chips"><span class="chip">~2h</span> <span class="chip">core</span> <span class="chip">hands-on</span></div>
+<p class="goal"><strong>Goal.</strong> Drive navigation from state using a typed path, not imperative pushes.</p>
+<p class="prereq"><strong>Prereq.</strong> L3</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://developer.apple.com/documentation/swiftui/migrating-to-new-navigation-types" target="_blank" rel="noopener">Apple: Migrating to new navigation types</a> : `NavigationStack`, `navigationDestination`, `NavigationPath`.</li><li><a href="https://www.avanderlee.com/swiftui/navigationstack-navigation/" target="_blank" rel="noopener">SwiftLee: NavigationStack and programmatic navigation</a> : enum-route pattern.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> A 3-screen flow (list -&gt; detail -&gt; edit) with an `enum Route`, plus a button that pops to root by clearing the path.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Enum-driven navigation in SwiftUI: state you can deep-link and test.&quot;</p>
+<p class="done"><strong>Done when.</strong> I can push, deep-link, and pop-to-root purely by mutating a path value.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/4" target="_blank" rel="noopener">Track: issue #4</a>
+</article><article class="lesson" id="arc-0-core-refresh-l5">
+<div class="lesson-top"><span class="lid">L5</span><h4>async/await by hand</h4></div>
+<div class="chips"><span class="chip">~2h</span> <span class="chip">core</span> <span class="chip">hands-on</span></div>
+<p class="goal"><strong>Goal.</strong> Write suspending functions and call them, and explain suspension vs a completion handler.</p>
+<p class="prereq"><strong>Prereq.</strong> none (can run parallel to L1 to L4)</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://www.hackingwithswift.com/quick-start/concurrency" target="_blank" rel="noopener">Hacking with Swift: Swift Concurrency by Example, async/await</a> : the async/await chapters.</li><li><a href="https://developer.apple.com/videos/play/wwdc2021/10132/" target="_blank" rel="noopener">WWDC21: Meet async/await in Swift</a> : full session, the suspension model.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Rewrite a closure-based &quot;load then decode&quot; function as `async` and call it from a `Task` in a view.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;What &#x27;suspension&#x27; actually means: async/await for people who lived in GCD.&quot;</p>
+<p class="done"><strong>Done when.</strong> I can convert a callback API to async/await and say what a suspension point is.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/5" target="_blank" rel="noopener">Track: issue #5</a>
+</article><article class="lesson" id="arc-0-core-refresh-l6">
+<div class="lesson-top"><span class="lid">L6</span><h4>Structured concurrency (Task, TaskGroup, cancellation)</h4></div>
+<div class="chips"><span class="chip">~2.5h</span> <span class="chip">core</span> <span class="chip">hands-on</span></div>
+<p class="goal"><strong>Goal.</strong> Run child tasks in parallel, collect results, and cancel cleanly.</p>
+<p class="prereq"><strong>Prereq.</strong> L5</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://www.hackingwithswift.com/quick-start/concurrency" target="_blank" rel="noopener">Hacking with Swift: Concurrency, task groups and cancellation</a> : the `TaskGroup` and cancellation chapters.</li><li><a href="https://www.donnywals.com/" target="_blank" rel="noopener">Donny Wals: Tasks and structured concurrency</a> : search his concurrency articles for TaskGroup/cancellation.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Fetch 5 URLs concurrently with `withTaskGroup`, show a combined result, and cancel all if the view disappears.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Task, TaskGroup, and the cancellation tree: structured concurrency by example.&quot;</p>
+<p class="done"><strong>Done when.</strong> I can parallelize N calls, aggregate them, and cancel the whole tree on demand.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/6" target="_blank" rel="noopener">Track: issue #6</a>
+</article><article class="lesson" id="arc-0-core-refresh-l7">
+<div class="lesson-top"><span class="lid">L7</span><h4>Actors and @MainActor (solve a data race)</h4></div>
+<div class="chips"><span class="chip">~2.5h</span> <span class="chip">advanced</span> <span class="chip">hands-on</span></div>
+<p class="goal"><strong>Goal.</strong> Reproduce a data race, then fix it with an actor, and know why `@MainActor` matters for UI.</p>
+<p class="prereq"><strong>Prereq.</strong> L6</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://developer.apple.com/videos/play/wwdc2021/10133/" target="_blank" rel="noopener">WWDC21: Protect mutable state with actors</a> : full session.</li><li><a href="https://www.avanderlee.com/swift/actors/" target="_blank" rel="noopener">SwiftLee: Actors in Swift</a> : reentrancy and isolation.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> A counter mutated from many tasks (see the race under Thread Sanitizer), then converted to an `actor`; move a UI update onto `@MainActor`.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;I wrote a data race on purpose, then let an actor fix it.&quot;</p>
+<p class="done"><strong>Done when.</strong> I can show the race, explain actor isolation, and place `@MainActor` correctly.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/7" target="_blank" rel="noopener">Track: issue #7</a>
+</article><article class="lesson" id="arc-0-core-refresh-l8">
+<div class="lesson-top"><span class="lid">L8</span><h4>@Observable / Observation (vs ObservableObject/Combine)</h4></div>
+<div class="chips"><span class="chip">~2h</span> <span class="chip">core</span> <span class="chip">hands-on</span></div>
+<p class="goal"><strong>Goal.</strong> Move state into a model observed directly by the view, and know what changed vs Combine.</p>
+<p class="prereq"><strong>Prereq.</strong> L2</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://developer.apple.com/videos/play/wwdc2023/10149/" target="_blank" rel="noopener">WWDC23: Discover Observation in SwiftUI</a> : full session.</li><li><a href="https://www.avanderlee.com/swiftui/observable-macro-performance-increase-observation-framework/" target="_blank" rel="noopener">SwiftLee: @Observable macro explained</a> : migration and gotchas.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Take an `ObservableObject` + `@Published` view model and migrate it to `@Observable`; confirm granular re-render (only affected views redraw).</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Why @Observable killed my ViewModel layer (and when it should not).&quot;</p>
+<p class="done"><strong>Done when.</strong> I can migrate to `@Observable` and explain the re-render difference vs `@Published`.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/8" target="_blank" rel="noopener">Track: issue #8</a>
+</article><article class="lesson" id="arc-0-core-refresh-l9">
+<div class="lesson-top"><span class="lid">L9</span><h4>Networking with modern async URLSession</h4></div>
+<div class="chips"><span class="chip">~2h</span> <span class="chip">core</span> <span class="chip">hands-on</span></div>
+<p class="goal"><strong>Goal.</strong> Fetch, decode with `Codable`, handle errors, and render, all async.</p>
+<p class="prereq"><strong>Prereq.</strong> L5</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://developer.apple.com/documentation/foundation/urlsession/3767352-data" target="_blank" rel="noopener">Apple: URLSession async/await (data(from:))</a> : the async API.</li><li><a href="https://www.hackingwithswift.com/quick-start/concurrency" target="_blank" rel="noopener">Hacking with Swift: fetching data with URLSession and async/await</a> : the networking chapter.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Fetch a public JSON API, decode into a `Codable` model, show a loading/error/success state in one view.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;async URLSession + Codable: the modern iOS networking baseline in 40 lines.&quot;</p>
+<p class="done"><strong>Done when.</strong> I can build fetch -&gt; decode -&gt; render with loading and error states from scratch.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/9" target="_blank" rel="noopener">Track: issue #9</a>
+</article><article class="lesson" id="arc-0-core-refresh-l10">
+<div class="lesson-top"><span class="lid">L10</span><h4>SwiftData basics</h4></div>
+<div class="chips"><span class="chip">~2.5h</span> <span class="chip">core</span> <span class="chip">hands-on</span></div>
+<p class="goal"><strong>Goal.</strong> Define a model, persist, query with `@Query`, and know the Core Data relationship and limits.</p>
+<p class="prereq"><strong>Prereq.</strong> L3</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://developer.apple.com/videos/play/wwdc2023/10187/" target="_blank" rel="noopener">WWDC23: Meet SwiftData</a> : full session.</li><li><a href="https://developer.apple.com/documentation/swiftdata" target="_blank" rel="noopener">Apple: SwiftData documentation</a> : `@Model`, `ModelContainer`, `@Query`.</li><li><a href="https://www.hackingwithswift.com/quick-start/swiftdata" target="_blank" rel="noopener">Hacking with Swift: SwiftData by Example</a> : the intro chapters.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Persist the L3 todo list with `@Model` + `@Query`; add, delete, and confirm it survives relaunch.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;SwiftData in an afternoon, and the iOS 17 floor that decides if you can use it.&quot;</p>
+<p class="done"><strong>Done when.</strong> I can model, persist, and query, and state when to still pick Core Data.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/10" target="_blank" rel="noopener">Track: issue #10</a>
+</article><article class="lesson" id="arc-0-core-refresh-l11">
+<div class="lesson-top"><span class="lid">L11</span><h4>Modern Swift language (some/any, result builders, using macros)</h4></div>
+<div class="chips"><span class="chip">~2h</span> <span class="chip">advanced</span> <span class="chip">hands-on</span></div>
+<p class="goal"><strong>Goal.</strong> Read and write `some`/`any`, understand result builders behind SwiftUI, and use a macro.</p>
+<p class="prereq"><strong>Prereq.</strong> L1</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://www.swiftbysundell.com/articles/opaque-return-types-in-swift/" target="_blank" rel="noopener">Swift by Sundell: opaque and existential types (some vs any)</a> : the some/any distinction.</li><li><a href="https://www.hackingwithswift.com/articles/" target="_blank" rel="noopener">Hacking with Swift: What&#x27;s new in Swift 5.7 (some/any), 5.9 (macros)</a> : the language-feature articles.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Write a tiny result-builder (a string builder) and use an existing macro; swap a `some View` for `any` and observe the compiler difference.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;some vs any, explained with the one example that finally made it stick.&quot;</p>
+<p class="done"><strong>Done when.</strong> I can explain some vs any in a sentence and build a trivial result builder.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/11" target="_blank" rel="noopener">Track: issue #11</a>
+</article><article class="lesson" id="arc-0-core-refresh-l12">
+<div class="lesson-top"><span class="lid">L12</span><h4>Swift Testing (@Test / #expect)</h4></div>
+<div class="chips"><span class="chip">~1.5h</span> <span class="chip">core</span> <span class="chip">hands-on</span></div>
+<p class="goal"><strong>Goal.</strong> Write modern tests with `@Test`/`#expect` and know the XCTest differences.</p>
+<p class="prereq"><strong>Prereq.</strong> L9</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://developer.apple.com/videos/play/wwdc2024/10179/" target="_blank" rel="noopener">WWDC24: Meet Swift Testing</a> : full session.</li><li><a href="https://developer.apple.com/documentation/testing" target="_blank" rel="noopener">Apple: Swift Testing documentation</a> : `@Test`, `#expect`, `#require`, parameterized tests.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Test the L9 decoder: a passing case, a failing-decode case, and one parameterized test over several inputs.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Swift Testing vs XCTest: the migration that makes tests readable again.&quot;</p>
+<p class="done"><strong>Done when.</strong> I can write `@Test` functions with `#expect` and a parameterized case from scratch.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/12" target="_blank" rel="noopener">Track: issue #12</a>
+</article></div><div class="arc"><div class="arc-head"><h3>Arc 1: On-device AI (Foundation Models + App Intents)</h3><div class="arc-meta"><span class="win">2026-08-24 → 2026-09-24</span><span class="eff">~22h</span><span class="cnt">10 lessons</span></div></div><p class="arc-intro">Hands-on curriculum for the most hireable iOS-native AI skill of 2026: shipping on-device Foundation Models features and exposing app capabilities through App Intents. Each lesson is a small buildable example, ~4-6h/week pace, code written by me. Some WWDC26 specifics are still beta and flagged inline as &quot;(verify, beta)&quot;: re-check them against the shipping SDK before relying on them.</p><article class="lesson" id="arc-1-on-device-ai-l1">
+<div class="lesson-top"><span class="lid">L1</span><h4>Foundation Models intro and when to use on-device</h4></div>
+<div class="chips"><span class="chip">~1.5h</span> <span class="chip">intro</span> <span class="chip">hands-on</span></div>
+<p class="goal"><strong>Goal.</strong> Run a first prompt against the on-device model and articulate when on-device beats a cloud LLM.</p>
+
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://developer.apple.com/videos/play/wwdc2025/286/" target="_blank" rel="noopener">Meet the Foundation Models framework (WWDC25, 286)</a> : full session, the mental model and the `LanguageModelSession` basics.</li><li><a href="https://developer.apple.com/documentation/FoundationModels" target="_blank" rel="noopener">Foundation Models framework docs</a> : landing page, API surface overview.</li><li><a href="https://www.natashatherobot.com/p/apple-foundation-models" target="_blank" rel="noopener">Introduction to Apple&#x27;s Foundation Models (Natasha the Robot)</a> : honest take on capabilities and limits (small model, on-device tradeoffs).</li><li><a href="https://machinelearning.apple.com/research/introducing-third-generation-of-apple-foundation-models" target="_blank" rel="noopener">Introducing the Third Generation of Apple Foundation Models (Apple ML Research)</a> : what the model is, sizes, what it is good and bad at.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> A one-screen SwiftUI playground: text field -&gt; `LanguageModelSession().respond(to:)` -&gt; render the string. Try a summarize prompt and a classify prompt; note latency and where it fails.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;When NOT to reach for a cloud LLM: the on-device decision tree for iOS features.&quot;</p>
+<p class="done"><strong>Done when.</strong> I can state 3 concrete features where on-device is the right call (privacy, offline, zero-cost, low-latency) and 3 where it is not (long context, frontier reasoning, freshness).</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/13" target="_blank" rel="noopener">Track: issue #13</a>
+</article><article class="lesson" id="arc-1-on-device-ai-l2">
+<div class="lesson-top"><span class="lid">L2</span><h4>@Generable and @Guide typed output</h4></div>
+<div class="chips"><span class="chip">~2h</span> <span class="chip">core</span> <span class="chip">hands-on</span></div>
+<p class="goal"><strong>Goal.</strong> Get structured, type-safe Swift values out of the model instead of parsing free text.</p>
+<p class="prereq"><strong>Prereq.</strong> L1</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://developer.apple.com/videos/play/wwdc2025/301/" target="_blank" rel="noopener">Deep dive into the Foundation Models framework (WWDC25, 301)</a> : guided generation, `@Generable`, `@Guide`, constrained decoding.</li><li><a href="https://developer.apple.com/documentation/foundationmodels/generating-content-and-performing-tasks-with-foundation-models" target="_blank" rel="noopener">Generating content and performing tasks with Foundation Models (docs)</a> : the canonical `@Generable` API reference and examples.</li><li><a href="https://swiftwithmajid.com/2025/08/26/building-ai-features-using-foundation-models-structured-content/" target="_blank" rel="noopener">Building AI features using Foundation Models: Structured Content (Swift with Majid)</a> : practical `@Generable` walkthrough with SwiftUI.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Define a `@Generable struct Recipe` (title, `@Guide`-constrained servings range, list of steps) and generate one from a free-text prompt. Confirm the model cannot return an invalid shape.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Constrained decoding in Swift: why @Generable makes on-device output reliable, not just convenient.&quot;</p>
+<p class="done"><strong>Done when.</strong> I can produce a nested `@Generable` type with at least one `@Guide` constraint that reliably decodes, and explain how constrained decoding guarantees the structure.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/14" target="_blank" rel="noopener">Track: issue #14</a>
+</article><article class="lesson" id="arc-1-on-device-ai-l3">
+<div class="lesson-top"><span class="lid">L3</span><h4>Custom Tool calling</h4></div>
+<div class="chips"><span class="chip">~2.5h</span> <span class="chip">core</span> <span class="chip">hands-on</span></div>
+<p class="goal"><strong>Goal.</strong> Let the model call my Swift code to fetch data or take an action mid-generation.</p>
+<p class="prereq"><strong>Prereq.</strong> L2</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://developer.apple.com/documentation/foundationmodels/expanding-generation-with-tool-calling" target="_blank" rel="noopener">Expanding generation with tool calling (docs)</a> : the `Tool` protocol, arguments, and how tool calling builds on guided generation.</li><li><a href="https://developer.apple.com/videos/play/wwdc2025/301/" target="_blank" rel="noopener">Deep dive into the Foundation Models framework (WWDC25, 301)</a> : tool-calling section (partial), autonomous data access.</li><li><a href="https://developer.apple.com/videos/play/wwdc2026/242/" target="_blank" rel="noopener">Build agentic app experiences with the Foundation Models framework (WWDC26, 242)</a> : multi-step tool use and agentic loops (verify, beta).</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Implement a `WeatherTool: Tool` (or a local-data tool over a small JSON store) and let the model decide when to invoke it inside a single `respond` call. Log every tool invocation.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Giving Apple&#x27;s on-device model hands: writing your first custom Tool in Swift.&quot;</p>
+<p class="done"><strong>Done when.</strong> The model calls my tool with valid arguments, I return a result, and the final answer incorporates it, all offline.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/15" target="_blank" rel="noopener">Track: issue #15</a>
+</article><article class="lesson" id="arc-1-on-device-ai-l4">
+<div class="lesson-top"><span class="lid">L4</span><h4>Streaming responses</h4></div>
+<div class="chips"><span class="chip">~1.5h</span> <span class="chip">core</span> <span class="chip">hands-on</span></div>
+<p class="goal"><strong>Goal.</strong> Stream partial output into SwiftUI so the UI updates token by token instead of waiting for the full response.</p>
+<p class="prereq"><strong>Prereq.</strong> L2</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://swiftwithmajid.com/2025/10/08/building-ai-features-using-foundation-models-streaming/" target="_blank" rel="noopener">Building AI features using Foundation Models: Streaming (Swift with Majid)</a> : `streamResponse`, `PartiallyGenerated`, wiring the async sequence into SwiftUI.</li><li><a href="https://developer.apple.com/videos/play/wwdc2025/301/" target="_blank" rel="noopener">Deep dive into the Foundation Models framework (WWDC25, 301)</a> : streaming with guided generation, partial snapshots.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Take the L2 `Recipe` and stream it: iterate the response async sequence, bind the `PartiallyGenerated` snapshot to `@State`, watch fields fill in live.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Streaming @Generable output into SwiftUI: partial snapshots without the flicker.&quot;</p>
+<p class="done"><strong>Done when.</strong> The screen renders progressively from a single streamed call and never shows a malformed intermediate state.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/16" target="_blank" rel="noopener">Track: issue #16</a>
+</article><article class="lesson" id="arc-1-on-device-ai-l5">
+<div class="lesson-top"><span class="lid">L5</span><h4>Model availability and graceful fallbacks</h4></div>
+<div class="chips"><span class="chip">~2h</span> <span class="chip">core</span> <span class="chip">hands-on</span></div>
+<p class="goal"><strong>Goal.</strong> Detect when the model is unavailable and degrade gracefully instead of crashing or showing a dead feature.</p>
+<p class="prereq"><strong>Prereq.</strong> L1</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://developer.apple.com/documentation/foundationmodels/systemlanguagemodel" target="_blank" rel="noopener">SystemLanguageModel (docs)</a> : `availability` enum and the unavailability reasons (Apple Intelligence off, device ineligible, model not ready).</li><li><a href="https://developer.apple.com/videos/play/wwdc2025/286/" target="_blank" rel="noopener">Meet the Foundation Models framework (WWDC25, 286)</a> : availability-check section and UI guidance.</li><li><a href="https://developer.apple.com/videos/play/wwdc2025/248/" target="_blank" rel="noopener">Explore prompt design and safety for on-device foundation models (WWDC25, 248)</a> : designing for degraded and refused states.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Gate the L1 feature on `SystemLanguageModel.default.availability`; render 3 distinct fallback UIs for the 3 unavailability reasons (disabled, ineligible device, not ready).</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;The 3 ways Apple Intelligence can be missing, and how to design for each.&quot;</p>
+<p class="done"><strong>Done when.</strong> My feature shows a correct, specific fallback for each unavailability reason and never assumes the model is present.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/17" target="_blank" rel="noopener">Track: issue #17</a>
+</article><article class="lesson" id="arc-1-on-device-ai-l6">
+<div class="lesson-top"><span class="lid">L6</span><h4>Routing: on-device vs Private Cloud Compute vs third-party</h4></div>
+<div class="chips"><span class="chip">~2.5h</span> <span class="chip">advanced</span> <span class="chip">hands-on</span></div>
+<p class="goal"><strong>Goal.</strong> Treat model choice as an orchestration axis; understand the `LanguageModel` protocol and swapping providers.</p>
+<p class="prereq"><strong>Prereq.</strong> L1, L5</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://developer.apple.com/videos/play/wwdc2026/339/" target="_blank" rel="noopener">Bring an LLM provider to the Foundation Models framework (WWDC26, 339)</a> : the `LanguageModel` protocol, capabilities, executor config (verify, beta).</li><li><a href="https://developer.apple.com/videos/play/wwdc2026/241/" target="_blank" rel="noopener">What&#x27;s new in the Foundation Models framework (WWDC26, 241)</a> : PCC, third-party routing, multimodal, context-window changes (verify, beta; treat context figures like ~8k on-device / ~32k PCC and any &quot;free tier&quot; as unconfirmed).</li><li><a href="https://developer.apple.com/wwdc26/guides/apple-intelligence/" target="_blank" rel="noopener">WWDC26 Apple Intelligence guide</a> : official index for the model-agnostic story and the Claude/Gemini Swift packages (verify, beta).</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Sketch a `ModelRouter` that picks on-device / PCC / third-party by task (privacy, context length, offline). Implement the on-device path for real; stub PCC and third-party behind the same protocol so callers do not change.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Model routing as an iOS architecture decision: one protocol, three backends.&quot;</p>
+<p class="done"><strong>Done when.</strong> I can justify a routing table (which task -&gt; which backend and why) and my call sites are backend-agnostic behind one protocol.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/18" target="_blank" rel="noopener">Track: issue #18</a>
+</article><article class="lesson" id="arc-1-on-device-ai-l7">
+<div class="lesson-top"><span class="lid">L7</span><h4>App Intents fundamentals</h4></div>
+<div class="chips"><span class="chip">~2h</span> <span class="chip">core</span> <span class="chip">hands-on</span></div>
+<p class="goal"><strong>Goal.</strong> Expose an app action as an `AppIntent` with typed parameters, the base unit for Siri, Shortcuts, Spotlight, and widgets.</p>
+
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://developer.apple.com/videos/play/wwdc2025/244/" target="_blank" rel="noopener">Get to know App Intents (WWDC25, 244)</a> : the model: intents, entities, parameters, the shared vocabulary.</li><li><a href="https://developer.apple.com/documentation/appintents" target="_blank" rel="noopener">App Intents framework docs</a> : `AppIntent`, `AppEntity`, `@Parameter` reference.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> In a tiny app, define one `AppIntent` (e.g. &quot;Add a note&quot;) with a `@Parameter` and an `AppEntity` for the note; run it from the Shortcuts app.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;App Intents from zero: the smallest useful intent and why it is now a senior-level skill.&quot;</p>
+<p class="done"><strong>Done when.</strong> My intent runs from Shortcuts with a typed parameter and returns a result entity.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/19" target="_blank" rel="noopener">Track: issue #19</a>
+</article><article class="lesson" id="arc-1-on-device-ai-l8">
+<div class="lesson-top"><span class="lid">L8</span><h4>App Intents across Siri, Shortcuts, Spotlight, and widgets</h4></div>
+<div class="chips"><span class="chip">~3h</span> <span class="chip">advanced</span> <span class="chip">hands-on</span></div>
+<p class="goal"><strong>Goal.</strong> Surface the same intent across system entry points and make entities discoverable.</p>
+<p class="prereq"><strong>Prereq.</strong> L7</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://developer.apple.com/videos/play/wwdc2025/275/" target="_blank" rel="noopener">Explore new advances in App Intents (WWDC25, 275)</a> : Spotlight, Visual Intelligence, interactive snippets, `IndexedEntity`.</li><li><a href="https://developer.apple.com/videos/play/wwdc2025/260/" target="_blank" rel="noopener">Develop for Shortcuts and Spotlight with App Intents (WWDC25, 260)</a> : App Shortcuts, Spotlight actions, parameter resolution.</li><li><a href="https://developer.apple.com/videos/play/wwdc2026/343/" target="_blank" rel="noopener">Explore advanced App Intents features for Siri and Apple Intelligence (WWDC26, 343)</a> : Siri AI integration, app schemas (verify, beta).</li><li><a href="https://developer.apple.com/videos/play/wwdc2026/345/" target="_blank" rel="noopener">Discover new capabilities in the App Intents framework (WWDC26, 345)</a> : `RelevantEntities`, `EntityCollection`, `SyncableEntity`, richer parameter types (verify, beta).</li><li><a href="https://matthewcassinelli.com/wwdc26-sessions-app-intents-siri-ai-apple-developer/" target="_blank" rel="noopener">WWDC26 Sessions: every App Intents and Siri AI video (Matthew Cassinelli)</a> : curated index and watch order for the App Intents track.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Add an `AppShortcut` for the L7 intent, make its entity `IndexedEntity` so it appears in Spotlight, and expose it in a simple widget or control.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;One intent, four surfaces: wiring an App Intent into Siri, Shortcuts, Spotlight, and a widget.&quot;</p>
+<p class="done"><strong>Done when.</strong> The same action is invokable from at least three of: Shortcuts, Spotlight, a widget/control, Siri.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/20" target="_blank" rel="noopener">Track: issue #20</a>
+</article><article class="lesson" id="arc-1-on-device-ai-l9">
+<div class="lesson-top"><span class="lid">L9</span><h4>Production hardening</h4></div>
+<div class="chips"><span class="chip">~2.5h</span> <span class="chip">advanced</span> <span class="chip">hands-on</span></div>
+<p class="goal"><strong>Goal.</strong> Make an on-device feature robust: context budgeting, safety guardrails, and model-version stability.</p>
+<p class="prereq"><strong>Prereq.</strong> L2, L3, L5</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://developer.apple.com/documentation/FoundationModels/improving-safety-from-generative-model-output" target="_blank" rel="noopener">Improving safety from generative model output (docs)</a> : built-in guardrails, handling refusals, responsible-AI guidance.</li><li><a href="https://developer.apple.com/videos/play/wwdc2025/248/" target="_blank" rel="noopener">Explore prompt design and safety for on-device foundation models (WWDC25, 248)</a> : prompt design, guardrail behavior, false-positive handling.</li><li><a href="https://developer.apple.com/videos/play/wwdc2026/295/" target="_blank" rel="noopener">Validate your App Intents adoption with AppIntentsTesting (WWDC26, 295)</a> : testing intents deterministically (verify, beta); relevant if the hardened feature ships through an intent.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Add to an earlier feature: (1) a token/context budget guard that trims input, (2) a graceful path when the guardrail refuses, (3) a note in code on the risk of not pinning the model version (behavior can drift across OS updates).</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Hardening on-device AI: context budgets, guardrail false positives, and the unpinned-model risk.&quot;</p>
+<p class="done"><strong>Done when.</strong> The feature handles oversized input, a guardrail refusal, and I can articulate why an unpinned model version is a stability risk.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/21" target="_blank" rel="noopener">Track: issue #21</a>
+</article><article class="lesson" id="arc-1-on-device-ai-l10">
+<div class="lesson-top"><span class="lid">L10</span><h4>Evaluations framework</h4></div>
+<div class="chips"><span class="chip">~2.5h</span> <span class="chip">advanced</span> <span class="chip">hands-on</span></div>
+<p class="goal"><strong>Goal.</strong> Measure feature quality with metrics and graded outputs instead of trusting vibes or unit tests alone.</p>
+<p class="prereq"><strong>Prereq.</strong> L2, L9</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://developer.apple.com/videos/play/wwdc2026/298/" target="_blank" rel="noopener">Meet the Evaluations framework (WWDC26, 298)</a> : defining metrics, auto-grading outputs, aggregating stats for stochastic features (verify, beta).</li><li><a href="https://developer.apple.com/videos/play/wwdc2026/241/" target="_blank" rel="noopener">What&#x27;s new in the Foundation Models framework (WWDC26, 241)</a> : where Evaluations fits with dynamic profiles and the FM workflow (verify, beta).</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Build a small eval set (10-20 cases) for the L2/L3 feature, define a pass metric, and run it to get an aggregate quality score. Introduce a prompt change and compare scores.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Testing the untestable: evaluating a probabilistic on-device feature with Apple&#x27;s Evaluations framework.&quot;</p>
+<p class="done"><strong>Done when.</strong> I have a repeatable eval that produces a quality number and can tell whether a prompt change helped or hurt.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/22" target="_blank" rel="noopener">Track: issue #22</a>
+</article></div><div class="arc"><div class="arc-head"><h3>Arc 2: iOS system design</h3><div class="arc-meta"><span class="win">2026-09-25 → 2026-10-18</span><span class="eff">~16.5h</span><span class="cnt">9 lessons</span></div></div><p class="arc-intro"># Arc 2: iOS system design Client-architecture system design for senior/lead iOS loops: a distinct ~45 min round (about 30 min active) scored on data flow, not UI polish. This arc drills one reusable spine (the 7-phase framework) across the canonical prompt list, then ends in a timed out-loud mock.</p><article class="lesson" id="arc-2-system-design-l1">
+<div class="lesson-top"><span class="lid">L1</span><h4>The 7-phase framework (the reusable spine)</h4></div>
+<div class="chips"><span class="chip">~90min</span> <span class="chip">intro</span> <span class="chip">study</span></div>
+<p class="goal"><strong>Goal.</strong> Internalize the ordered spine (scope, functional reqs, non-functional reqs, data model, API, high-level design, drill-down) so every prompt runs on autopilot and you never freeze on where to start.</p>
+
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://blog.jacobstechtavern.com/p/system-design-interview" target="_blank" rel="noopener">iOS System Design interviews in 2026 (Jacob Bartlett)</a> : the primary framework source; read the full worked example end to end. (some posts paywalled)</li><li><a href="https://blog.jacobstechtavern.com/p/ios-system-design" target="_blank" rel="noopener">Inside Meta&#x27;s &quot;iOS System Design&quot; Interview (Jacob Bartlett)</a> : shows the same spine applied under a real Meta rubric; note how time is budgeted per phase.</li><li><a href="https://themobileinterview.com/cracking-the-mobile-system-design-interview/" target="_blank" rel="noopener">Cracking the Mobile System Design Interview (themobileinterview.com)</a> : free companion structure; the &quot;balance breadth vs depth, follow interviewer hints&quot; guidance.</li><li><a href="https://www.systemdesignhandbook.com/guides/ios-system-design-interview/" target="_blank" rel="noopener">iOS System Design Interview: A Complete Guide 2026 (systemdesignhandbook.com)</a> : second phrasing of the same phases, iOS-specific.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Write the 7 phase names from memory, then next to each write the ONE question you ask the interviewer in that phase and roughly how many of the ~30 active minutes it gets. Do it twice until the order is automatic.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;The 7-phase spine I run in every iOS system design interview&quot; for bitswithlucas.com.</p>
+<p class="done"><strong>Done when.</strong> You can recite the 7 phases in order and state a time budget per phase without looking.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/23" target="_blank" rel="noopener">Track: issue #23</a>
+</article><article class="lesson" id="arc-2-system-design-l2">
+<div class="lesson-top"><span class="lid">L2</span><h4>The scored signals and voicing trade-offs</h4></div>
+<div class="chips"><span class="chip">~90min</span> <span class="chip">intro</span> <span class="chip">study</span></div>
+<p class="goal"><strong>Goal.</strong> Know exactly what earns points (data model over UI, caching, offline, concurrency, memory under load, testing, explicit trade-offs) and drill the sentence pattern that voices a trade-off out loud instead of silently picking.</p>
+<p class="prereq"><strong>Prereq.</strong> L1</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://github.com/weeeBox/mobile-system-design/blob/master/common-interview-mistakes.md" target="_blank" rel="noopener">Common interview mistakes (weeeBox/mobile-system-design)</a> : free; the anti-patterns that lose points (jumping to UI, no trade-off reasoning).</li><li><a href="https://newsletter.systemdesign.one/p/mobile-system-design-interview" target="_blank" rel="noopener">The Mobile Engineer&#x27;s Guide to System Design Interviews (systemdesign.one)</a> : free; the signal checklist and how seniority raises the bar to scale/evolvability.</li><li><a href="https://engineeringenablement.substack.com/p/all-you-need-to-know-to-ace-your" target="_blank" rel="noopener">All you need to know to ace your Mobile System Design interview (engineeringenablement.substack.com)</a> : free; strong on making trade-offs explicit as the senior differentiator.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Pick one already-known decision (memory vs disk cache) and say the trade-off out loud in the pattern: &quot;Option A gives X but costs Y; option B gives Z; for this constraint I&#x27;d pick A because ___, and revisit if ___.&quot; Record 3 reps, listen back for hedging.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;How to voice a trade-off in a system design interview (the sentence that scores)&quot;.</p>
+<p class="done"><strong>Done when.</strong> You can list the scored signals from memory and state any design choice as an explicit trade-off with a trigger to revisit.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/24" target="_blank" rel="noopener">Track: issue #24</a>
+</article><article class="lesson" id="arc-2-system-design-l3">
+<div class="lesson-top"><span class="lid">L3</span><h4>Image loading and caching library</h4></div>
+<div class="chips"><span class="chip">~2h</span> <span class="chip">core</span> <span class="chip">drill</span></div>
+<p class="goal"><strong>Goal.</strong> Design the classic (SDWebImage/Kingfisher-style loader) across all 7 phases: two-tier cache (memory + disk), request dedup, cancellation on cell reuse, downsampling for memory under load.</p>
+<p class="prereq"><strong>Prereq.</strong> L1, L2</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://github.com/weeeBox/mobile-system-design/blob/master/exercises/image-library.md" target="_blank" rel="noopener">image-library.md (weeeBox/mobile-system-design)</a> : free; the canonical reference solution, follow its component split.</li><li><a href="https://proandroiddev.com/mobile-system-design-exercise-image-library-83999eb0ad3c" target="_blank" rel="noopener">Mobile System Design Exercise: Image Library (Alex Lementuev, ProAndroidDev)</a> : free; the weeeBox author&#x27;s long-form walkthrough (single-responsibility loader vs cache).</li><li><a href="https://github.com/weeeBox/mobile-system-design/blob/master/exercises/caching-library.md" target="_blank" rel="noopener">caching-library.md (weeeBox/mobile-system-design)</a> : free; the cache eviction/LRU sub-problem in isolation.</li><li><a href="https://qureshi-ayaz29.medium.com/cracking-the-mobile-system-design-interview-design-a-scalable-image-loading-library-7d2c5668e054" target="_blank" rel="noopener">Design a Scalable Image Loading Library (Ayaz Qureshi, Medium)</a> : free-tier; concise API-ergonomics angle.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Whiteboard the data model + public API for the image loader in 25 min, out loud, then spend 10 min only on the drill-down: what cancels an in-flight request when a UICollectionView cell is reused.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;How I&#x27;d design an image cache in Swift (memory, disk, and cell reuse)&quot;.</p>
+<p class="done"><strong>Done when.</strong> You can draw the loader/cache/decoder split and defend memory-vs-disk eviction and downsampling without notes.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/25" target="_blank" rel="noopener">Track: issue #25</a>
+</article><article class="lesson" id="arc-2-system-design-l4">
+<div class="lesson-top"><span class="lid">L4</span><h4>News / social feed</h4></div>
+<div class="chips"><span class="chip">~2h</span> <span class="chip">core</span> <span class="chip">drill</span></div>
+<p class="goal"><strong>Goal.</strong> Design an infinite feed across the 7 phases: cursor-based pagination, prefetching, pull-to-refresh vs live updates, cache/offline read, and the data model behind heterogeneous cells.</p>
+<p class="prereq"><strong>Prereq.</strong> L3</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://medium.com/@fenominall/level-up-your-mobile-system-design-architecting-feeds-comments-like-you-mean-it-b10a47a752a8" target="_blank" rel="noopener">Level Up Your Mobile System Design: Architecting Feeds and Comments (Vladislav Todorov, Medium)</a> : free-tier; mobile-client feed architecture, not backend fan-out.</li><li><a href="https://bytebytego.com/courses/mobile-system-design-interview/news-feed-app" target="_blank" rel="noopener">News Feed App (ByteByteGo mobile system design course)</a> : paid; the structured mobile-specific feed walkthrough if you have a subscription.</li><li><a href="https://www.systemdesignhandbook.com/guides/ios-system-design-interview/" target="_blank" rel="noopener">iOS System Design Interview: A Complete Guide 2026 (systemdesignhandbook.com)</a> : free; use its feed section for cursor pagination and stale-session handling.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Whiteboard the data model + API (cursor pagination shape) for a social feed in 25 min out loud, then argue cursor vs offset pagination explicitly as a trade-off in under 3 min.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Designing an iOS feed: cursor pagination, prefetch, and offline reads&quot;.</p>
+<p class="done"><strong>Done when.</strong> You can justify cursor pagination, describe prefetch + pull-to-refresh, and sketch the feed data model from memory.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/26" target="_blank" rel="noopener">Track: issue #26</a>
+</article><article class="lesson" id="arc-2-system-design-l5">
+<div class="lesson-top"><span class="lid">L5</span><h4>1:1 chat with image and video</h4></div>
+<div class="chips"><span class="chip">~2h</span> <span class="chip">core</span> <span class="chip">drill</span></div>
+<p class="goal"><strong>Goal.</strong> Design 1:1 messaging across the 7 phases: local message IDs + optimistic UI, send-queue with retry, ordering/delivery states, and media upload/download for large attachments under memory limits.</p>
+<p class="prereq"><strong>Prereq.</strong> L4</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://github.com/weeeBox/mobile-system-design/blob/master/exercises/chat-app.md" target="_blank" rel="noopener">chat-app.md (weeeBox/mobile-system-design)</a> : free; the canonical chat reference (local UUID, optimistic UI, sync).</li><li><a href="https://proandroiddev.com/mobile-system-design-exercise-chat-application-12223a0c1ac" target="_blank" rel="noopener">Mobile System Design Exercise: Chat Application (Alex Lementuev, ProAndroidDev)</a> : free; long-form walkthrough with the coordinator/data-flow split.</li><li><a href="https://github.com/weeeBox/mobile-system-design/blob/master/exercises/file-downloader-library.md" target="_blank" rel="noopener">file-downloader-library.md (weeeBox/mobile-system-design)</a> : free; the media upload/download and resumable-transfer sub-problem.</li><li><a href="https://blog.jacobstechtavern.com/p/reliable-data-uploading-on-ios" target="_blank" rel="noopener">Reliable Data Uploading on iOS (Jacob Bartlett)</a> : the background-upload + retry angle for attachments. (may be paywalled)</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Whiteboard the message data model (local ID, server ID, status enum) + send/retry API in 25 min out loud, then drill for 10 min: how a message survives the app being killed mid-send.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Optimistic UI for chat in Swift: local IDs, send queues, and retry&quot;.</p>
+<p class="done"><strong>Done when.</strong> You can explain optimistic UI with local IDs, the send-queue retry model, and large-media memory handling unprompted.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/27" target="_blank" rel="noopener">Track: issue #27</a>
+</article><article class="lesson" id="arc-2-system-design-l6">
+<div class="lesson-top"><span class="lid">L6</span><h4>Offline sync / offline-first data layer</h4></div>
+<div class="chips"><span class="chip">~2h</span> <span class="chip">advanced</span> <span class="chip">drill</span></div>
+<p class="goal"><strong>Goal.</strong> Design an offline-first layer across the 7 phases: local store as source of truth, an outbox/mutation queue, background sync, and an explicit conflict-resolution strategy (last-write-wins vs versioning) with its data-loss trade-off.</p>
+<p class="prereq"><strong>Prereq.</strong> L5</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://medium.com/@ios-interview/design-an-offline-first-ios-app-step-by-step-approach-8bbbd6e085c3" target="_blank" rel="noopener">Design an Offline-First iOS App, Step-by-Step (Tanishq Arora, Medium)</a> : free-tier; iOS-specific offline layer with the interview framing.</li><li><a href="https://medium.com/@ios-interview/offline-first-architecture-in-ios-interview-question-97777482742d" target="_blank" rel="noopener">Offline-First Architecture in iOS, Interview Question (Tanishq Arora, Medium)</a> : free-tier; the sync + conflict-resolution question walkthrough.</li><li><a href="https://www.systemdesignhandbook.com/guides/ios-system-design-interview/" target="_blank" rel="noopener">iOS System Design Interview: A Complete Guide 2026 (systemdesignhandbook.com)</a> : free; its sync-layer and conflict section (timestamps/versions/last-write-wins).</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Whiteboard the mutation-queue data model + sync API in 25 min out loud, then state the conflict-resolution choice as an explicit trade-off (last-write-wins simplicity vs merge correctness) in under 3 min.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Offline-first on iOS: the outbox pattern and choosing a conflict strategy&quot;.</p>
+<p class="done"><strong>Done when.</strong> You can describe local-as-source-of-truth, the outbox/sync flow, and defend a conflict strategy with its failure mode.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/28" target="_blank" rel="noopener">Track: issue #28</a>
+</article><article class="lesson" id="arc-2-system-design-l7">
+<div class="lesson-top"><span class="lid">L7</span><h4>Analytics SDK (client library design)</h4></div>
+<div class="chips"><span class="chip">~2h</span> <span class="chip">advanced</span> <span class="chip">drill</span></div>
+<p class="goal"><strong>Goal.</strong> Design a client analytics SDK across the 7 phases: a clean public API, event queue with disk persistence, batching + flush policy, retry/backoff, and survival across app kill, all as a library (not an app).</p>
+<p class="prereq"><strong>Prereq.</strong> L2</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://codeint.medium.com/system-design-interview-architecting-an-analytics-manager-b38bf3c73d33" target="_blank" rel="noopener">System Design Interview: Architecting an Analytics Manager (Sahil Thakar, Medium)</a> : free-tier; the EventQueue, batch config, and flush-on-max design.</li><li><a href="https://www.systemdesignhandbook.com/guides/google-analytics-system-design/" target="_blank" rel="noopener">Google Analytics System Design: The Complete Guide 2026 (systemdesignhandbook.com)</a> : free; batching vs immediate-send trade-off (accuracy vs battery/bandwidth).</li><li><a href="https://www.systemdesignhandbook.com/guides/mobile-system-design-interview/" target="_blank" rel="noopener">Mobile System Design Interview: A Complete Guide (systemdesignhandbook.com)</a> : free; the client-library framing (API ergonomics, stability, resource management).</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Whiteboard the SDK&#x27;s public API surface + event/queue data model in 25 min out loud, then drill: how batching size and flush interval trade off data loss vs battery, said as an explicit trade-off.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Designing an analytics SDK in Swift: batching, persistence, and not losing events&quot;.</p>
+<p class="done"><strong>Done when.</strong> You can sketch the public API, the persisted queue, and defend the batch/flush policy with its data-loss trade-off.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/29" target="_blank" rel="noopener">Track: issue #29</a>
+</article><article class="lesson" id="arc-2-system-design-l8">
+<div class="lesson-top"><span class="lid">L8</span><h4>Real-time stock ticker (streaming)</h4></div>
+<div class="chips"><span class="chip">~2h</span> <span class="chip">advanced</span> <span class="chip">drill</span></div>
+<p class="goal"><strong>Goal.</strong> Design a streaming ticker across the 7 phases: URLSessionWebSocketTask connection lifecycle, reconnect/backoff, UI update throttling/coalescing to protect render + battery, and delta vs snapshot updates.</p>
+<p class="prereq"><strong>Prereq.</strong> L5</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://medium.com/@dhavaljasoliya8/real-time-data-streaming-in-ios-websockets-vs-polling-f3503ff4edb2" target="_blank" rel="noopener">Real-Time Data Streaming in iOS: WebSockets vs Polling (Dhaval Jasoliya, Medium)</a> : free-tier; URLSessionWebSocketTask, battery trade-offs, native since iOS 13.</li><li><a href="https://www.systemdesignhandbook.com/guides/design-robinhood/" target="_blank" rel="noopener">Design Robinhood: How to Design a Trading App (systemdesignhandbook.com)</a> : free; the streaming-ticker problem framing and scale constraints.</li><li><a href="https://dataford.io/interview-guides/robinhood/mobile-engineer" target="_blank" rel="noopener">Robinhood Mobile Engineer Interview Guide 2026 (Dataford)</a> : free-tier; the exact &quot;high-frequency updates without degrading UI/battery&quot; prompt this drills.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Whiteboard the connection + update-pipeline data flow in 25 min out loud, then drill for 10 min: how you throttle/coalesce thousands of updates/sec so the UI thread and battery survive.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Streaming a stock ticker in Swift: WebSockets, reconnect, and throttling the UI&quot;.</p>
+<p class="done"><strong>Done when.</strong> You can describe the WebSocket lifecycle, reconnect strategy, and UI-throttling approach without notes.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/30" target="_blank" rel="noopener">Track: issue #30</a>
+</article><article class="lesson" id="arc-2-system-design-l9">
+<div class="lesson-top"><span class="lid">L9</span><h4>Mock and rehearsal (out loud, timed)</h4></div>
+<div class="chips"><span class="chip">~90min</span> <span class="chip">advanced</span> <span class="chip">drill</span></div>
+<p class="goal"><strong>Goal.</strong> Run a full prompt cold in one 30 min timed block, out loud, with no notes, to close the gap between knowing the spine and performing it live under a clock.</p>
+<p class="prereq"><strong>Prereq.</strong> L3, L4, L5, L6, L7, L8</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://www.tryexponent.com/practice" target="_blank" rel="noopener">Mock Interviews: practice with peers and AI (Exponent)</a> : peer + AI mock sessions; the &quot;practice out loud, it&#x27;s a live conversation&quot; argument. (paid for full access)</li><li><a href="https://www.tryexponent.com/courses/system-design-interviews/mock-interview-design-instagram" target="_blank" rel="noopener">Design Instagram mock interview (Exponent)</a> : a recorded mock to model pacing and interviewer interaction. (paid)</li><li><a href="https://www.tryexponent.com/blog/apple-system-design-interview" target="_blank" rel="noopener">Apple System Design Interview 2026 Guide (Exponent)</a> : free; reinforces privacy-by-design + on-device/offline reasoning for the Apple bar.</li><li><a href="https://blog.jacobstechtavern.com/p/ios-coding-interview" target="_blank" rel="noopener">iOS coding interview (Jacob Bartlett)</a> : companion, so the design mock and the live-coding round stay distinct in your prep. (may be paywalled)</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Pick a random prompt from L3 to L8, set a 30 min timer, and run all 7 phases out loud with an empty whiteboard. Record it. Score yourself against L2&#x27;s signal list; note where you skipped a phase or a trade-off.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;What I learned recording myself doing iOS system design mocks&quot;.</p>
+<p class="done"><strong>Done when.</strong> You complete a cold prompt in 30 min, out loud, hitting all 7 phases and voicing at least 3 explicit trade-offs.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/31" target="_blank" rel="noopener">Track: issue #31</a>
+</article></div><div class="arc"><div class="arc-head"><h3>Currency / awareness</h3><div class="arc-meta"><span class="win">2026-07-20 → 2026-10-18</span><span class="eff">~5.67h</span><span class="cnt">8 lessons</span></div></div><p class="arc-intro">Know-it-exists cluster: enough depth to decide, ask for, or review, not to build from scratch. Runs continuously at a low dose, not as a focus arc. Each lesson is `study` mode: read, poke at one small thing, form an opinion.</p><article class="lesson" id="currency-awareness-l1">
+<div class="lesson-top"><span class="lid">L1</span><h4>Liquid Glass on iOS 26, automatic vs opt-in</h4></div>
+<div class="chips"><span class="chip">~45min</span> <span class="chip">intro</span> <span class="chip">study</span></div>
+<p class="goal"><strong>Goal.</strong> Explain the two adoption paths: automatic (recompile against the iOS 26 SDK re-skins standard chrome) vs opt-in APIs (`glassEffect`, `.buttonStyle(.glass)` / `.glassProminent`, `GlassEffectContainer`) for custom views.</p>
+
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://developer.apple.com/documentation/technologyoverviews/adopting-liquid-glass" target="_blank" rel="noopener">Adopting Liquid Glass (Apple)</a> : the &quot;automatic on recompile&quot; model and where the system re-skins chrome for free.</li><li><a href="https://developer.apple.com/documentation/swiftui/applying-liquid-glass-to-custom-views" target="_blank" rel="noopener">Applying Liquid Glass to custom views (Apple)</a> : `glassEffect`, `.interactive()`, `GlassEffectContainer`, union/morphing.</li><li><a href="https://developer.apple.com/videos/play/wwdc2025/219/" target="_blank" rel="noopener">Meet Liquid Glass, WWDC25 session 219</a> : the material and design intent.</li><li><a href="https://www.donnywals.com/designing-custom-ui-with-liquid-glass-on-ios-26/" target="_blank" rel="noopener">Designing custom UI with Liquid Glass on iOS 26 (Donny Wals)</a> : practical opt-in walkthrough.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Recompile a small sample app against the iOS 26 SDK and note exactly what re-skinned automatically (tab bar, nav bar, sheets, toolbars) vs what stayed flat and would need explicit `glassEffect`.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Liquid Glass for free vs Liquid Glass on purpose: what a recompile actually changes.&quot;</p>
+<p class="done"><strong>Done when.</strong> I can say, per UI element, whether it re-skins automatically or needs an opt-in modifier, and name the opt-out flag.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/32" target="_blank" rel="noopener">Track: issue #32</a>
+</article><article class="lesson" id="currency-awareness-l2">
+<div class="lesson-top"><span class="lid">L2</span><h4>Framing iOS 27 correctly (the adoption deadline, not a redesign)</h4></div>
+<div class="chips"><span class="chip">~30min</span> <span class="chip">intro</span> <span class="chip">study</span></div>
+<p class="goal"><strong>Goal.</strong> Correct the common mis-framing. Liquid Glass is iOS 26 (WWDC25). iOS 27 (WWDC26) is an AI/Siri release; its Liquid Glass relevance is the mandatory-adoption deadline: `UIDesignRequiresCompatibility` opt-out exists in Xcode 26 but is removed in Xcode 27, so re-skinning becomes unavoidable (App Store cutover ~Apr 2027).</p>
+<p class="prereq"><strong>Prereq.</strong> L1</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://www.donnywals.com/opting-your-app-out-of-the-liquid-glass-redesign-with-xcode-26/" target="_blank" rel="noopener">Opting your app out of the Liquid Glass redesign with Xcode 26 (Donny Wals)</a> : the `UIDesignRequiresCompatibility` key and the &quot;removed in the next Xcode&quot; warning.</li><li><a href="https://www.macrumors.com/guide/ios-26-liquid-glass/" target="_blank" rel="noopener">iOS 26: everything about the Liquid Glass redesign (MacRumors)</a> : timeline and version framing.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Add `UIDesignRequiresCompatibility = YES` to a sample Info.plist, confirm it reverts to the pre-26 look, then write one paragraph on when a team should use the opt-out vs adopt now, given the deadline. (verify, beta: exact Xcode 27 removal + App Store date are not firmly confirmed, treat ~Apr 2027 as directional.)</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;iOS 27 is not a design release: the real Liquid Glass deadline explained.&quot;</p>
+<p class="done"><strong>Done when.</strong> I never again call iOS 27 a &quot;design update&quot; and can state why the opt-out is a stopgap, not a strategy.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/33" target="_blank" rel="noopener">Track: issue #33</a>
+</article><article class="lesson" id="currency-awareness-l3">
+<div class="lesson-top"><span class="lid">L3</span><h4>Accessibility and the Liquid Glass contrast controversy</h4></div>
+<div class="chips"><span class="chip">~40min</span> <span class="chip">core</span> <span class="chip">study</span></div>
+<p class="goal"><strong>Goal.</strong> Understand the legibility critique (translucency drops contrast well below WCAG), and the user-facing mitigations: iOS 26.1 Clear vs Tinted toggle (Display &amp; Brightness), plus Accessibility &gt; Reduce Transparency / Increase Contrast.</p>
+<p class="prereq"><strong>Prereq.</strong> L1</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://www.nngroup.com/articles/liquid-glass/" target="_blank" rel="noopener">Liquid Glass Is Cracked, and Usability Suffers in iOS 26 (NN/g, Raluca Budiu)</a> : the contrast and clarity critique from a usability authority.</li><li><a href="https://www.engadget.com/mobile/smartphones/how-to-adjust-the-liquid-glass-effect-in-ios-261-203634681.html" target="_blank" rel="noopener">How to adjust the Liquid Glass effect in iOS 26.1 (Engadget)</a> : the Clear/Tinted toggle and where it lives.</li><li><a href="https://techcrunch.com/2025/11/04/ios-26-1-lets-you-turn-down-liquid-glass-transparency/" target="_blank" rel="noopener">iOS 26.1 lets you turn down Liquid Glass transparency (TechCrunch)</a> : context on why Apple added the toggle.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> On a device or simulator, toggle Tinted and Reduce Transparency on a Liquid Glass screen and note which controls become readable; check whether the sample app respects `.accessibilityReduceTransparency` in its custom glass views.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;When the OS trend fights your users: reading Liquid Glass through an accessibility lens.&quot;</p>
+<p class="done"><strong>Done when.</strong> I can name the two settings that fix legibility and explain why custom glass must honor Reduce Transparency.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/34" target="_blank" rel="noopener">Track: issue #34</a>
+</article><article class="lesson" id="currency-awareness-l4">
+<div class="lesson-top"><span class="lid">L4</span><h4>General accessibility checklist a senior should carry</h4></div>
+<div class="chips"><span class="chip">~45min</span> <span class="chip">core</span> <span class="chip">study</span></div>
+<p class="goal"><strong>Goal.</strong> Hold a working mental checklist: Dynamic Type, VoiceOver labels/traits/order, contrast, hit targets, Reduce Motion, and the SwiftUI accessibility modifiers that cover them. This is the roadmap.sh gap the old track cut.</p>
+
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://developer.apple.com/documentation/SwiftUI/Accessibility-fundamentals" target="_blank" rel="noopener">Accessibility fundamentals (Apple, SwiftUI)</a> : the model (elements, labels, values, traits).</li><li><a href="https://developer.apple.com/documentation/SwiftUI/View-Accessibility" target="_blank" rel="noopener">Accessibility modifiers (Apple, SwiftUI)</a> : the concrete modifier surface.</li><li><a href="https://developer.apple.com/design/human-interface-guidelines/accessibility" target="_blank" rel="noopener">Accessibility, Human Interface Guidelines (Apple)</a> : the design-level checklist and priorities.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Turn on VoiceOver and navigate one real screen (Pray or Resenha) end to end; list every element with a missing/confusing label or wrong traversal order.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;The 8-point accessibility pass I run before shipping any SwiftUI screen.&quot;</p>
+<p class="done"><strong>Done when.</strong> I can review a PR and flag missing Dynamic Type support, unlabeled controls, or motion issues without a reference open.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/35" target="_blank" rel="noopener">Track: issue #35</a>
+</article><article class="lesson" id="currency-awareness-l5">
+<div class="lesson-top"><span class="lid">L5</span><h4>SwiftUI-first with UIKit islands</h4></div>
+<div class="chips"><span class="chip">~40min</span> <span class="chip">core</span> <span class="chip">study</span></div>
+<p class="goal"><strong>Goal.</strong> Internalize the decision rule: SwiftUI is the default, but a UIKit `UICollectionView` island still wins for dense/complex scrolling feeds (measured lower hitch rates), demanding text, and perf/thermal-sensitive surfaces. Know how to justify the exception.</p>
+
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://blog.jacobstechtavern.com/p/swiftui-vs-uikit" target="_blank" rel="noopener">Is SwiftUI finally as fast as UIKit in iOS 26? (Jacob&#x27;s Tech Tavern)</a> : the iOS 26 scroll benchmark (UIKit ~0.7 vs SwiftUI ~3.4 hitches/sec on a heavy feed) and why `UpdateCoalescingCollectionView` differs from a plain collection view.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Write a one-paragraph decision note: for a specific Pray screen, decide SwiftUI vs a UIKit island and state the concrete signal (feed density, image/GIF load, measured hitches) that would flip the call.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;SwiftUI by default, UIKit on purpose: where the collection view still wins in 2026.&quot;</p>
+<p class="done"><strong>Done when.</strong> I can defend, in an interview, when I would drop to UIKit inside a SwiftUI app and cite the perf reason.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/36" target="_blank" rel="noopener">Track: issue #36</a>
+</article><article class="lesson" id="currency-awareness-l6">
+<div class="lesson-top"><span class="lid">L6</span><h4>Agentic tooling, Xcode 26.6 stable vs Xcode 27 beta, vs my Claude Code setup</h4></div>
+<div class="chips"><span class="chip">~50min</span> <span class="chip">core</span> <span class="chip">study</span></div>
+<p class="goal"><strong>Goal.</strong> Map the tooling landscape and evaluate it against my existing Claude Code workflow. Separate the Coding Assistant (chat/inline, since Xcode 26) from agentic coding (MCP/ACP, first-class Claude Agent + Codex since 26.3). Understand Xcode 27&#x27;s exportable agent skills (`swiftui-specialist`, `test-modernizer`, etc.) that ship to `~/.agents/skills` for Claude Code / Codex / Cursor. Frame: evaluate in beta now, standardize at fall GA; stable today is Xcode 26.6 (Swift 6.3).</p>
+
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://www.anthropic.com/news/apple-xcode-claude-agent-sdk" target="_blank" rel="noopener">Apple&#x27;s Xcode now supports the Claude Agent SDK (Anthropic)</a> : what the native integration gives (subagents, background tasks, visual verification of Previews).</li><li><a href="https://www.apple.com/newsroom/2026/02/xcode-26-point-3-unlocks-the-power-of-agentic-coding/" target="_blank" rel="noopener">Xcode 26.3 unlocks agentic coding (Apple Newsroom)</a> : the official framing of MCP + Claude/Codex.</li><li><a href="https://www.avanderlee.com/ai-development/using-xcode-27s-agent-skills-in-claude-codex-and-cursor/" target="_blank" rel="noopener">Using Xcode 27&#x27;s agent skills in Claude, Codex, and Cursor (SwiftLee)</a> : the `xcrun` export flow and which skills are portable vs Xcode-bound. (verify, beta)</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> If Xcode 27 beta is installed, export the agent skills to `~/.agents/skills` and try `swiftui-specialist` inside Claude Code on a sample; write two lines on whether it adds anything over my current setup.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Apple shipped agent skills that run in Claude Code: I put them next to my own setup.&quot;</p>
+<p class="done"><strong>Done when.</strong> I can explain Coding Assistant vs agentic vs my Claude Code workflow and say which I would actually adopt and when.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/37" target="_blank" rel="noopener">Track: issue #37</a>
+</article><article class="lesson" id="currency-awareness-l7">
+<div class="lesson-top"><span class="lid">L7</span><h4>UI testing and CI/CD (the &quot;quality platform&quot; gap)</h4></div>
+<div class="chips"><span class="chip">~60min</span> <span class="chip">core</span> <span class="chip">study</span></div>
+<p class="goal"><strong>Goal.</strong> Get literate in the pieces a senior is expected to have opinions on: XCUITest for end-to-end flows, snapshot testing for component/state regressions, fastlane `match` + TestFlight for signing and beta delivery, and Xcode Cloud vs GitHub Actions as the CI choice.</p>
+
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://docs.fastlane.tools/actions/match/" target="_blank" rel="noopener">match (fastlane docs)</a> : and [Beta deployment / TestFlight (fastlane docs)](https://docs.fastlane.tools/getting-started/ios/beta-deployment/) : shared signing identity + `pilot`/`upload_to_testflight`.</li><li><a href="https://github.com/pointfreeco/swift-snapshot-testing" target="_blank" rel="noopener">swift-snapshot-testing (Point-Free, GitHub)</a> : the de facto snapshot library (repo free; the Point-Free episodes are paid).</li><li><a href="https://www.swiftyplace.com/blog/xcuitest-ui-testing-swiftui" target="_blank" rel="noopener">XCUITest: how to write UI tests for SwiftUI apps (swiftyplace)</a> : XCUITest basics and where it fits the test pyramid.</li><li><a href="https://theswiftk.it.com/blog/xcode-cloud-vs-github-actions-vs-bitrise" target="_blank" rel="noopener">Xcode Cloud vs GitHub Actions vs Bitrise (The Swift Kit)</a> : the trade-off (Xcode Cloud = zero-config, auto signing, 25 free hrs; GitHub Actions = flexible but expensive macOS minutes + manual signing).</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> On a sample repo, add one XCUITest and one snapshot test, then sketch (do not fully build) a fastlane lane that runs `match`, builds, and uploads to TestFlight; note which CI you would pick and why.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;The iOS quality platform a senior is expected to know: tests, signing, and CI in one map.&quot;</p>
+<p class="done"><strong>Done when.</strong> I can whiteboard a CI/CD + testing pipeline in a system-design round and defend Xcode Cloud vs GitHub Actions for a given team.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/38" target="_blank" rel="noopener">Track: issue #38</a>
+</article><article class="lesson" id="currency-awareness-l8">
+<div class="lesson-top"><span class="lid">L8</span><h4>The staying-current habit (newsletters + WWDC)</h4></div>
+<div class="chips"><span class="chip">~30min setup, then 🔁 weekly</span> <span class="chip">intro</span> <span class="chip">study</span></div>
+<p class="goal"><strong>Goal.</strong> Install a low-cost currency loop so I never fall behind again: one weekly newsletter skim plus a habit of watching the handful of WWDC sessions that matter each June.</p>
+
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://iosdevweekly.com/" target="_blank" rel="noopener">iOS Dev Weekly</a> : free, Fridays, broad Apple-platform curation (now run by a new team after Dave Verwer stepped back).</li><li><a href="https://www.avanderlee.com/" target="_blank" rel="noopener">SwiftLee (Antoine van der Lee)</a> : deep, reliable Swift/SwiftUI posts; weekly newsletter on Tuesdays.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Subscribe to one (not both to start), then this week read one issue and drop a single note into the vault on anything worth a follow-up.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;My 30-minute weekly loop to stay a current iOS dev without doom-scrolling.&quot;</p>
+<p class="done"><strong>Done when.</strong> The newsletter skim is a standing weekly habit and I have a short list of &quot;must-watch&quot; WWDC session types for next June.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/39" target="_blank" rel="noopener">Track: issue #39</a>
+</article></div></section><section class="cluster"><h2 class="cluster-h">Edge (differentiator)</h2><div class="arc"><div class="arc-head"><h3>Edge: AI orchestration, judgment, narrative</h3><div class="arc-meta"><span class="win">2026-07-20 → 2026-10-18</span><span class="eff">~17h</span><span class="cnt">8 lessons</span></div></div><p class="arc-intro"># Edge: AI orchestration, judgment, narrative This is the &quot;why you, in the AI era&quot; cluster. It is not separate study, it is how I already work on Pray and Resenha made explicit, defensible, and narratable. Goal: convert &quot;a thing I do&quot; into a story I tell with fluency, a rubric I can hand to anyone, and a live interview skill. Builds on [[sprint-dia6-resumo-diferencial]] and [[checklist-code-review-agente]].</p><article class="lesson" id="edge-l1">
+<div class="lesson-top"><span class="lid">L1</span><h4>The orchestration workflow, made explicit</h4></div>
+<div class="chips"><span class="chip">~2h</span> <span class="chip">intro</span> <span class="chip">study</span></div>
+<p class="goal"><strong>Goal.</strong> Name and defend my investigate → plan → implement → test loop with approval gates, so I can describe it precisely instead of gesturing at &quot;I use AI.&quot;</p>
+
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://www.anthropic.com/engineering/claude-code-best-practices" target="_blank" rel="noopener">Claude Code best practices</a> : the explore → plan → code → commit workflow; why the plan step and a fresh-context review pass raise output quality. Maps directly onto my loop.</li><li><a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener">Building effective AI agents</a> : the workflow vs agent distinction (predefined code paths vs the model directing itself); vocabulary for describing what I orchestrate.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Write the 4 phases as a one-page diagram with the explicit approval gate between each, annotated with what I check at each gate on a real Pray feature I shipped this month.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;On-the-loop: the four gates I never let an agent skip&quot;: my actual workflow, gate by gate, with a real Pray PR as the spine.</p>
+<p class="done"><strong>Done when.</strong> I can walk through the loop out loud in under 90 seconds and point to where judgment enters at each gate.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/40" target="_blank" rel="noopener">Track: issue #40</a>
+</article><article class="lesson" id="edge-l2">
+<div class="lesson-top"><span class="lid">L2</span><h4>When NOT to use an agent (risk calibration)</h4></div>
+<div class="chips"><span class="chip">~1.5h</span> <span class="chip">core</span> <span class="chip">study</span></div>
+<p class="goal"><strong>Goal.</strong> Make explicit where I trust the agent, where I do not, and why the line sits there. This is the &quot;judgment &gt; usage&quot; differentiator, not tool familiarity.</p>
+<p class="prereq"><strong>Prereq.</strong> L1</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener">Building effective AI agents</a> : &quot;find the simplest solution possible, only add complexity when it demonstrably improves outcomes&quot;: the case against reaching for an agent by default.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Draft my personal &quot;do-not-delegate&quot; list from real Pray/Resenha cases: payment/auth/sensitive-data paths, less-common lib calls, anything where &quot;plausible&quot; is not &quot;verified.&quot; One real example per line.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;&#x27;I deduced it&#x27;: the word that exposes a confabulating agent&quot;: the invented-API story, why it happens, and the rule it taught me.</p>
+<p class="done"><strong>Done when.</strong> I can answer &quot;where would you NOT trust an agent?&quot; with three concrete lived examples, not principles.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/41" target="_blank" rel="noopener">Track: issue #41</a>
+</article><article class="lesson" id="edge-l3">
+<div class="lesson-top"><span class="lid">L3</span><h4>Context engineering (codebase and PRD as agent handoff)</h4></div>
+<div class="chips"><span class="chip">~2.5h</span> <span class="chip">core</span> <span class="chip">study</span></div>
+<p class="goal"><strong>Goal.</strong> Treat organizing a codebase, CLAUDE.md, and a PRD as the engineering task that decides whether an agent succeeds. Codify the &quot;why&quot; the agent cannot infer.</p>
+<p class="prereq"><strong>Prereq.</strong> L1</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" target="_blank" rel="noopener">Effective context engineering for AI agents</a> : context as the finite resource to curate; &quot;what configuration of context most reliably produces the behavior I want?&quot;</li><li><a href="https://www.anthropic.com/engineering/claude-code-best-practices" target="_blank" rel="noopener">Claude Code best practices</a> : CLAUDE.md as the highest-leverage setup; /clear to avoid the &quot;kitchen sink session&quot;; codebase organized by problem domain.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Audit one Pray repo&#x27;s CLAUDE.md against the context-engineering checklist, then write one PRD-to-agent handoff for a Resenha feature good enough that a fresh agent ships it without me re-explaining.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Your codebase is a prompt: context engineering for teams that ship with agents&quot;: CLAUDE.md, domain layout, and PRD handoffs as the real skill.</p>
+<p class="done"><strong>Done when.</strong> A cold-context agent completes a scoped task from my handoff with no clarifying round-trips.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/42" target="_blank" rel="noopener">Track: issue #42</a>
+</article><article class="lesson" id="edge-l4">
+<div class="lesson-top"><span class="lid">L4</span><h4>Multi-agent patterns as a competency I can explain</h4></div>
+<div class="chips"><span class="chip">~2h</span> <span class="chip">core</span> <span class="chip">study</span></div>
+<p class="goal"><strong>Goal.</strong> Be able to explain supervisor/worker orchestration and subagents (why, when, and the failure modes) as a design competency, not a tool I happen to run.</p>
+<p class="prereq"><strong>Prereq.</strong> L1, L3</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://www.anthropic.com/engineering/multi-agent-research-system" target="_blank" rel="noopener">How we built our multi-agent research system</a> : the orchestrator-worker pattern; the subagent contract (objective, output format, tool/source guidance, task boundaries) and how missing any of the four causes drift.</li><li><a href="https://code.claude.com/docs/en/sub-agents" target="_blank" rel="noopener">Create custom subagents (Claude Code docs)</a> : subagents as isolated context windows with their own prompt/tools; isolate large-output work so only the summary returns.</li><li><a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener">Building effective AI agents</a> : orchestrator-workers vs simpler workflows (prompt chaining, routing) and when multi-agent is not worth the coordination cost.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Map my own multi-workspace/multi-agent Pray setup onto the orchestrator-worker vocabulary; write the four-part contract I (implicitly) give each worker and note where drift has actually bitten me.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Supervisor and workers, on an iOS team of one: the multi-agent setup I actually run&quot;: the pattern, the contract, and the coordination cost that made me stop over-spawning.</p>
+<p class="done"><strong>Done when.</strong> I can whiteboard orchestrator-worker and state the four-part subagent contract from memory, with a real drift example.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/43" target="_blank" rel="noopener">Track: issue #43</a>
+</article><article class="lesson" id="edge-l5">
+<div class="lesson-top"><span class="lid">L5</span><h4>AI code review as a discipline (a reusable rubric)</h4></div>
+<div class="chips"><span class="chip">~3h</span> <span class="chip">advanced</span> <span class="chip">practice</span></div>
+<p class="goal"><strong>Goal.</strong> Turn my review checklist into a reusable, defensible rubric organized by agent failure mode (illegal state transitions, security, architectural drift), plus 2-3 documented real Pray findings. This is the cluster artifact.</p>
+<p class="prereq"><strong>Prereq.</strong> L2, L4</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://www.anthropic.com/engineering/writing-tools-for-agents" target="_blank" rel="noopener">Writing effective tools for AI agents</a> : how agents misuse APIs and mishandle context budgets: sharpens the &quot;API misuse / invented API&quot; review category.</li><li><a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener">Building effective AI agents</a> : failure modes of autonomous systems and why review/guardrails matter as complexity rises.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Apply the rubric to my next real Pray agent PR (use the [[ios-code-review]] skill as the live pass), then fill the &quot;registro da revisão real&quot; section of [[checklist-code-review-agente]] with what I found and what it taught me about where the agent errs in my codebase.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;A code-review rubric for AI-generated PRs: the failure modes I look for first&quot;: illegal state transitions, security, silent architectural drift, each with a real Pray finding.</p>
+<p class="done"><strong>Done when.</strong> The rubric is one shareable page and I have 2-3 fresh, true Pray examples logged against it.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/44" target="_blank" rel="noopener">Track: issue #44</a>
+</article><article class="lesson" id="edge-l6">
+<div class="lesson-top"><span class="lid">L6</span><h4>Fluency in the AI-assisted coding interview (with a rep)</h4></div>
+<div class="chips"><span class="chip">~2.5h</span> <span class="chip">advanced</span> <span class="chip">practice</span></div>
+<p class="goal"><strong>Goal.</strong> Perform the new interview format: decompose a problem, prompt for well-defined subtasks, verify or reject output live, and narrate the judgment out loud. Scored on HOW I use AI, not whether.</p>
+<p class="prereq"><strong>Prereq.</strong> L1, L2</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://interviewing.io/blog/how-to-use-ai-in-meta-s-ai-assisted-coding-interview-with-real-prompts-and-examples" target="_blank" rel="noopener">How to use AI in Meta&#x27;s AI-assisted coding interview (interviewing.io)</a> : real prompts; &quot;start from the core logic so I can review it easily&quot;; silently pasting AI output is a red flag on technical communication.</li><li><a href="https://www.hellointerview.com/blog/meta-ai-enabled-coding" target="_blank" rel="noopener">Meta&#x27;s AI-enabled coding interview: how to prepare (Hello Interview)</a> : format (one onsite coding round replaced, ~60 min in a tool with a built-in assistant); what strong vs weak AI usage looks like.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Timed rep: pick a medium problem, screen-record 45 min. Decompose it, prompt for one subtask at a time, deliberately catch and reject one wrong suggestion, narrating my reasoning the whole time. Review the recording for silent-paste moments.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Narrating your judgment: how the AI-assisted coding interview is actually scored&quot;: decompose, prompt small, reject live, talk the whole time.</p>
+<p class="done"><strong>Done when.</strong> In a timed rep I decompose, drive subtask-by-subtask, catch at least one bad suggestion out loud, and never paste silently.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/45" target="_blank" rel="noopener">Track: issue #45</a>
+</article><article class="lesson" id="edge-l7">
+<div class="lesson-top"><span class="lid">L7</span><h4>Domain verticalization as a differentiator</h4></div>
+<div class="chips"><span class="chip">~1.5h</span> <span class="chip">advanced</span> <span class="chip">study</span></div>
+<p class="goal"><strong>Goal.</strong> Articulate where my domain depth (faith apps at Pray, live football at Resenha) makes AI genuinely valuable versus where it just adds complexity: the vertical judgment a generalist prompter lacks.</p>
+<p class="prereq"><strong>Prereq.</strong> L2, L3</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://www.anthropic.com/engineering/building-effective-agents" target="_blank" rel="noopener">Building effective AI agents</a> : agents suited to open-ended problems where steps cannot be pre-scripted: the test for where a vertical AI feature earns its complexity.</li><li><a href="https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents" target="_blank" rel="noopener">Effective context engineering for AI agents</a> : domain context as the input that separates a useful feature from a demo; why I can supply it and a generalist cannot.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> For Resenha and Pray, list two AI feature ideas each and score them: does domain nuance make the agent clearly better, or is it novelty adding maintenance cost? Pick the one that feeds Arc 1&#x27;s artifact.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Where AI actually helps a faith app (and where it just adds latency)&quot;: domain judgment as the moat a prompt-only engineer does not have.</p>
+<p class="done"><strong>Done when.</strong> I have one AI feature I can defend as domain-justified and one I killed on purpose, with the reasoning for each.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/46" target="_blank" rel="noopener">Track: issue #46</a>
+</article><article class="lesson" id="edge-l8">
+<div class="lesson-top"><span class="lid">L8</span><h4>Writing the differentiator narrative</h4></div>
+<div class="chips"><span class="chip">~2h</span> <span class="chip">advanced</span> <span class="chip">practice</span></div>
+<p class="goal"><strong>Goal.</strong> Assemble the cluster into the one story that separates me: 15 years of discipline as the amplifier the agent needs, told for interviews and turned into blog posts and portfolio pieces.</p>
+<p class="prereq"><strong>Prereq.</strong> L1-L7</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://www.anthropic.com/engineering/claude-code-best-practices" target="_blank" rel="noopener">Claude Code best practices</a> : concrete workflow details that make the narrative specific instead of buzzwordy.</li><li><a href="https://www.anthropic.com/engineering/multi-agent-research-system" target="_blank" rel="noopener">How we built our multi-agent research system</a> : industry-credible framing to anchor my personal setup against a known reference.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Write the 200-word spoken version of the narrative, then expand the L1-L7 exercises into a 3-post series outline for bitswithlucas.com (workflow, the rubric, the interview format). Rehearse the spoken version once out loud.</p>
+<p class="blog"><strong>Blog angle.</strong> The series itself is the deliverable: &quot;How I work with agents&quot; as a 3-part story, each post one lesson&#x27;s artifact made public.</p>
+<p class="done"><strong>Done when.</strong> I can deliver the 200-word narrative from memory and have the 3-post outline drafted in the vault.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/47" target="_blank" rel="noopener">Track: issue #47</a>
+</article></div></section><section class="cluster"><h2 class="cluster-h">Readiness (drills)</h2><div class="arc"><div class="arc-head"><h3>Readiness: DSA, live coding, behavioral</h3><div class="arc-meta"><span class="win">2026-07-20 → 2026-10-18</span><span class="eff">~16.5h</span><span class="cnt">13 lessons</span></div></div><p class="arc-intro"># Readiness: DSA, live coding, behavioral This is the low-dose &quot;stay loop-ready&quot; track, not a grind. DSA is a gate you clear with pattern fluency, not a differentiator, so the goal is ~1-2 problems per week, recognizing the pattern fast and coding it clean in Swift. Live coding and org-scope stories are the two other reps that decay if untouched. The DSA lessons (L1-L11) are pattern refreshers, not problem counts. Each one: learn the pattern, do the named Blind 75 problems in Swift, move on. Loop the whole set roughly quarterly.</p><article class="lesson" id="readiness-l1">
+<div class="lesson-top"><span class="lid">L1</span><h4>Arrays, hashmaps and frequency counting</h4></div>
+<div class="chips"><span class="chip">~90m</span> <span class="chip">intro</span> <span class="chip">drill</span></div>
+<p class="goal"><strong>Goal.</strong> Use a dictionary/set to trade space for O(n) time; count frequencies and dedupe.</p>
+
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://neetcode.io/practice/practice/blind75" target="_blank" rel="noopener">NeetCode Blind 75 (Arrays &amp; Hashing)</a> : the first category; video solution per problem.</li><li><a href="https://www.techinterviewhandbook.org/best-practice-questions/" target="_blank" rel="noopener">Tech Interview Handbook: best practice questions</a> : the Blind 75 list by its author, with the array/hashing set.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> In Swift: Two Sum, Contains Duplicate, Valid Anagram, Group Anagrams, Product of Array Except Self, Top K Frequent Elements, Longest Consecutive Sequence. Prefer `Dictionary`/`Set`, mind `reduce(into:)`.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Swift&#x27;s Dictionary is your interview cheat code: frequency maps in O(n)&quot;</p>
+<p class="done"><strong>Done when.</strong> you reach for a hashmap reflexively when a nested loop appears, and know `Dictionary` default-subscript patterns cold.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/48" target="_blank" rel="noopener">Track: issue #48</a>
+</article><article class="lesson" id="readiness-l2">
+<div class="lesson-top"><span class="lid">L2</span><h4>Two pointers</h4></div>
+<div class="chips"><span class="chip">~60m</span> <span class="chip">intro</span> <span class="chip">drill</span></div>
+<p class="goal"><strong>Goal.</strong> Converge two indices from the ends (or fast/slow) on a sorted or symmetric structure to drop a nested loop.</p>
+<p class="prereq"><strong>Prereq.</strong> L1</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://neetcode.io/practice/practice/blind75" target="_blank" rel="noopener">NeetCode Blind 75 (Two Pointers)</a> : the Two Pointers category.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> In Swift: Valid Palindrome, 3Sum, Container With Most Water. Handle Swift `String` indexing carefully (no integer subscripts).</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Two pointers in Swift, and why String indexing trips everyone up&quot;</p>
+<p class="done"><strong>Done when.</strong> you can state the loop invariant out loud before writing, and 3Sum&#x27;s dedup logic is muscle memory.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/49" target="_blank" rel="noopener">Track: issue #49</a>
+</article><article class="lesson" id="readiness-l3">
+<div class="lesson-top"><span class="lid">L3</span><h4>Sliding window</h4></div>
+<div class="chips"><span class="chip">~75m</span> <span class="chip">core</span> <span class="chip">drill</span></div>
+<p class="goal"><strong>Goal.</strong> Maintain a moving window with a running aggregate, expanding and shrinking to satisfy a constraint.</p>
+<p class="prereq"><strong>Prereq.</strong> L2</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://neetcode.io/practice/practice/blind75" target="_blank" rel="noopener">NeetCode Blind 75 (Sliding Window)</a> : the Sliding Window category.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> In Swift: Best Time to Buy and Sell Stock, Longest Substring Without Repeating Characters, Longest Repeating Character Replacement, Minimum Window Substring (stretch).</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Sliding window in Swift, explained with one loop and a dictionary&quot;</p>
+<p class="done"><strong>Done when.</strong> you can distinguish fixed vs variable window on sight and know when to shrink the left edge.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/50" target="_blank" rel="noopener">Track: issue #50</a>
+</article><article class="lesson" id="readiness-l4">
+<div class="lesson-top"><span class="lid">L4</span><h4>Binary search</h4></div>
+<div class="chips"><span class="chip">~60m</span> <span class="chip">core</span> <span class="chip">drill</span></div>
+<p class="goal"><strong>Goal.</strong> Halve the search space each step; recognize monotonic conditions that hide a binary search.</p>
+
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://neetcode.io/practice/practice/blind75" target="_blank" rel="noopener">NeetCode Blind 75 (Binary Search)</a> : the Binary Search category.</li><li><a href="https://neetcode.io/roadmap" target="_blank" rel="noopener">NeetCode roadmap</a> : shows where binary search sits in the dependency graph.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> In Swift: Search in Rotated Sorted Array, Find Minimum in Rotated Sorted Array. Write the `lo`/`hi`/`mid` template once and reuse it; avoid overflow with `lo + (hi - lo) / 2`.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;The binary search template that stops off-by-one bugs (in Swift)&quot;</p>
+<p class="done"><strong>Done when.</strong> you write a bug-free bound check on the first try and can adapt the template to &quot;find first/last&quot;.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/51" target="_blank" rel="noopener">Track: issue #51</a>
+</article><article class="lesson" id="readiness-l5">
+<div class="lesson-top"><span class="lid">L5</span><h4>Stack</h4></div>
+<div class="chips"><span class="chip">~45m</span> <span class="chip">intro</span> <span class="chip">drill</span></div>
+<p class="goal"><strong>Goal.</strong> Use a LIFO structure for matching, nesting, and monotonic problems.</p>
+
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://neetcode.io/practice/practice/blind75" target="_blank" rel="noopener">NeetCode Blind 75 (Stack)</a> : the Stack category.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> In Swift: Valid Parentheses. Then a monotonic-stack rep from NeetCode 150 (Daily Temperatures) for the harder variant. A Swift `Array` is your stack (`append`/`popLast`).</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;When an Array is secretly a stack: matching and monotonic patterns in Swift&quot;</p>
+<p class="done"><strong>Done when.</strong> you spot &quot;matching pairs&quot; or &quot;next greater element&quot; and reach for a stack immediately.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/52" target="_blank" rel="noopener">Track: issue #52</a>
+</article><article class="lesson" id="readiness-l6">
+<div class="lesson-top"><span class="lid">L6</span><h4>Linked lists</h4></div>
+<div class="chips"><span class="chip">~75m</span> <span class="chip">core</span> <span class="chip">drill</span></div>
+<p class="goal"><strong>Goal.</strong> Pointer manipulation: reverse, detect cycles (fast/slow), merge, and use dummy heads.</p>
+
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://neetcode.io/practice/practice/blind75" target="_blank" rel="noopener">NeetCode Blind 75 (Linked List)</a> : the Linked List category.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> In Swift: Reverse Linked List, Linked List Cycle, Merge Two Sorted Lists, Remove Nth Node From End of List, Reorder List. Model the node as a `final class Node` (reference type) and mind ARC when breaking cycles.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Linked lists in Swift are a reference-type story: reversing without leaking&quot;</p>
+<p class="done"><strong>Done when.</strong> dummy-head merges and Floyd&#x27;s cycle detection come without hesitation.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/53" target="_blank" rel="noopener">Track: issue #53</a>
+</article><article class="lesson" id="readiness-l7">
+<div class="lesson-top"><span class="lid">L7</span><h4>Trees (BFS and DFS)</h4></div>
+<div class="chips"><span class="chip">~90m</span> <span class="chip">core</span> <span class="chip">drill</span></div>
+<p class="goal"><strong>Goal.</strong> Recursive DFS (pre/in/post) and queue-based BFS over binary trees; carry state up and down.</p>
+<p class="prereq"><strong>Prereq.</strong> L5, L6</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://neetcode.io/practice/practice/blind75" target="_blank" rel="noopener">NeetCode Blind 75 (Trees)</a> : the Trees category.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> In Swift: Invert Binary Tree, Maximum Depth, Same Tree, Subtree of Another Tree, Lowest Common Ancestor of a BST, Binary Tree Level Order Traversal, Validate BST, Kth Smallest in a BST, Serialize/Deserialize (stretch).</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;DFS vs BFS on a binary tree in Swift: when recursion beats a queue&quot;</p>
+<p class="done"><strong>Done when.</strong> you pick DFS vs BFS by the question shape and write level-order with a queue cleanly.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/54" target="_blank" rel="noopener">Track: issue #54</a>
+</article><article class="lesson" id="readiness-l8">
+<div class="lesson-top"><span class="lid">L8</span><h4>Graphs (BFS and DFS)</h4></div>
+<div class="chips"><span class="chip">~90m</span> <span class="chip">core</span> <span class="chip">drill</span></div>
+<p class="goal"><strong>Goal.</strong> Traverse adjacency structures, track visited, and detect cycles / topological order.</p>
+<p class="prereq"><strong>Prereq.</strong> L7</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://neetcode.io/practice/practice/blind75" target="_blank" rel="noopener">NeetCode Blind 75 (Graphs)</a> : the Graphs category.</li><li><a href="https://neetcode.io/roadmap" target="_blank" rel="noopener">NeetCode roadmap</a> : graphs depend on trees; follow the order.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> In Swift: Number of Islands, Clone Graph, Pacific Atlantic Water Flow, Course Schedule (cycle detection / topo sort), Number of Connected Components, Graph Valid Tree. Build adjacency lists with `[Int: [Int]]` and a `Set` for visited.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Grid problems are graph problems: island-counting DFS in Swift&quot;</p>
+<p class="done"><strong>Done when.</strong> you convert a grid or edge list to a traversal without thinking, and know when a cycle check is really topological sort.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/55" target="_blank" rel="noopener">Track: issue #55</a>
+</article><article class="lesson" id="readiness-l9">
+<div class="lesson-top"><span class="lid">L9</span><h4>Heap / top-K</h4></div>
+<div class="chips"><span class="chip">~60m</span> <span class="chip">core</span> <span class="chip">drill</span></div>
+<p class="goal"><strong>Goal.</strong> Keep the K best elements or a running median with a priority queue.</p>
+<p class="prereq"><strong>Prereq.</strong> L1, L7</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://neetcode.io/practice/practice/blind75" target="_blank" rel="noopener">NeetCode Blind 75 (Heap / Priority Queue)</a> : the Heap category.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> In Swift: Top K Frequent Elements (heap version, contrast with the L1 bucket version), Find Median from Data Stream (two heaps), Merge K Sorted Lists. Note: Swift has no stdlib heap; use `swift-collections` `Heap` or hand-roll one, and say so in an interview.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;Swift has no built-in heap: what to do in a top-K interview&quot;</p>
+<p class="done"><strong>Done when.</strong> you recognize &quot;K largest / smallest / median stream&quot; as a heap signal and can justify the missing-stdlib workaround.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/56" target="_blank" rel="noopener">Track: issue #56</a>
+</article><article class="lesson" id="readiness-l10">
+<div class="lesson-top"><span class="lid">L10</span><h4>Backtracking</h4></div>
+<div class="chips"><span class="chip">~75m</span> <span class="chip">advanced</span> <span class="chip">drill</span></div>
+<p class="goal"><strong>Goal.</strong> Explore a decision tree with choose / recurse / un-choose, pruning invalid paths.</p>
+<p class="prereq"><strong>Prereq.</strong> L7</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://neetcode.io/practice/practice/blind75" target="_blank" rel="noopener">NeetCode Blind 75 (Backtracking)</a> : the Backtracking category.</li><li><a href="https://www.hackingwithswift.com/store/swift-coding-challenges" target="_blank" rel="noopener">Swift Coding Challenges (paid)</a> : combinatorial challenges worked in idiomatic Swift.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> In Swift: Combination Sum, Word Search. Add Subsets and Permutations from NeetCode 150 for the canonical template.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;The backtracking template in Swift: choose, recurse, un-choose&quot;</p>
+<p class="done"><strong>Done when.</strong> you write the recurse/un-choose skeleton from memory and can articulate a pruning rule.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/57" target="_blank" rel="noopener">Track: issue #57</a>
+</article><article class="lesson" id="readiness-l11">
+<div class="lesson-top"><span class="lid">L11</span><h4>Dynamic programming (intro)</h4></div>
+<div class="chips"><span class="chip">~90m</span> <span class="chip">advanced</span> <span class="chip">drill</span></div>
+<p class="goal"><strong>Goal.</strong> Spot overlapping subproblems, define a state, and go top-down (memo) then bottom-up (table).</p>
+<p class="prereq"><strong>Prereq.</strong> L10</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://neetcode.io/practice/practice/blind75" target="_blank" rel="noopener">NeetCode Blind 75 (1-D and 2-D DP)</a> : the two DP categories.</li><li><a href="https://www.techinterviewhandbook.org/grind75/" target="_blank" rel="noopener">Grind 75</a> : filter to DP for a difficulty-ordered subset if the Blind list feels steep.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> In Swift: Climbing Stairs, House Robber, House Robber II, Coin Change, Longest Increasing Subsequence, Word Break. Stretch 2-D: Unique Paths, Longest Common Subsequence. Write memoized recursion first, then the table.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;From recursion to a table: DP intro in Swift with House Robber&quot;</p>
+<p class="done"><strong>Done when.</strong> you can name the state and recurrence before coding, and convert a memo solution to bottom-up.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/58" target="_blank" rel="noopener">Track: issue #58</a>
+</article><article class="lesson" id="readiness-l12">
+<div class="lesson-top"><span class="lid">L12</span><h4>Timed live coding in Xcode</h4></div>
+<div class="chips"><span class="chip">~60-90m</span> <span class="chip">core</span> <span class="chip">drill</span></div>
+<p class="goal"><strong>Goal.</strong> Build a small screen from scratch and fix a live memory/concurrency bug under the clock; completion speed is the scored variable.</p>
+<p class="prereq"><strong>Prereq.</strong> none (leans on Arc 0 core iOS)</p>
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://blog.jacobstechtavern.com/p/ios-coding-interview" target="_blank" rel="noopener">Jacob Bartlett: the iOS coding interview</a> : format, what is scored, how to pace.</li><li><a href="https://www.hackingwithswift.com/articles/157/the-complete-guide-to-ios-and-swift-job-interviews" target="_blank" rel="noopener">The Complete Guide to iOS and Swift Job Interviews (free)</a> : the live-coding and take-home sections, plus 150 questions.</li><li><a href="https://www.youtube.com/seanallen" target="_blank" rel="noopener">Sean Allen on YouTube</a> : iOS interview-questions playlist and take-home walkthroughs (ARC, retain cycles, threading).</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> One rep, 60-90 min, timer on: build a SwiftUI (or UIKit) screen that fetches an API and renders a list with an async image and a loading/error state, then inject a retain cycle or a main-thread-off UI update and fix it live. Rotate SwiftUI vs UIKit each time. Narrate as you go.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;How I fix a retain cycle live in an iOS interview (and talk through it)&quot;</p>
+<p class="done"><strong>Done when.</strong> you ship a working screen inside 60 min and can diagnose a `[weak self]` leak or a `DispatchQueue.main` miss on sight.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/59" target="_blank" rel="noopener">Track: issue #59</a>
+</article><article class="lesson" id="readiness-l13">
+<div class="lesson-top"><span class="lid">L13</span><h4>Org-scope STAR stories (staff/lead)</h4></div>
+<div class="chips"><span class="chip">~90m</span> <span class="chip">advanced</span> <span class="chip">drill</span></div>
+<p class="goal"><strong>Goal.</strong> Draft and rehearse stories that show cross-team influence, ambiguity navigation, and setting technical direction, not just &quot;I executed on my team.&quot;</p>
+
+<div class="sources"><strong>Sources</strong><ul><li><a href="https://www.techinterviewhandbook.org/behavioral-interview-senior-candidates/" target="_blank" rel="noopener">Tech Interview Handbook: behavioral for senior candidates</a> : the senior-vs-staff scope framing and STAR structure.</li></ul></div>
+<p class="ex"><strong>Exercise.</strong> Draft 4-5 STAR stories, each with the org-scope signal explicit (&quot;shaped the decision / created alignment / managed cross-team risk&quot;, not &quot;executed&quot;). Suggested set: (1) drove a technical direction across two or more teams; (2) navigated an ambiguous problem with no clear owner; (3) influenced without authority (a decision that was not yours to make); (4) managed cross-team or release risk that could have shipped a regression; (5) mentored or leveled up other engineers / set a standard (e.g. an AI code-review rubric). Write Situation-Task-Action-Result, then say each out loud once.</p>
+<p class="blog"><strong>Blog angle.</strong> &quot;STAR stories for staff-level interviews: the scope words that actually move the bar&quot;</p>
+<p class="done"><strong>Done when.</strong> each story has a one-line org-scope hook and you can tell it in under two minutes without notes.</p>
+<a class="track" href="https://github.com/lucasdomene/ios-ai-roadmap/issues/60" target="_blank" rel="noopener">Track: issue #60</a>
+</article></div></section>
+<footer>Tracking board: <a href="https://github.com/users/lucasdomene/projects/1" target="_blank" rel="noopener">GitHub Project</a> · 60 lessons · generated 2026-07-16</footer>
+</div></body></html>
