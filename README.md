@@ -16,14 +16,16 @@ Three clusters, one focus arc at a time plus a light always-on layer.
 
 Depth arcs run in order (0 → 1 → 2). Pillars 0 and 1 are hands-on: small examples written by hand, not generated. Every arc closes with an artifact, and blog posts on [bitswithlucas.com](https://bitswithlucas.com) count.
 
-## Schedule (~5h/week, from 2026-07-20)
+## Schedule (~1 Depth lesson/week, from 2026-07-20)
 
-| Arc | Effort | Target end |
-|---|---|---|
-| Arc 0: Core iOS refresh | ~24.5h | ~Aug 23 |
-| Arc 1: On-device AI | ~22h | ~Sep 24 |
-| Arc 2: iOS system design | ~16.5h | ~Oct 18 |
-| **Depth complete** | **~63h** | **~mid-Oct 2026** |
+No rush. One Depth lesson per week, with a break for a wedding (Sep 5-13). The parallel arcs spread across the whole window.
+
+| Arc | Lessons | Window | Target end |
+|---|---|---|---|
+| Arc 0: Core iOS refresh | 12 | Jul 20 → Oct 18, 2026 | ~Oct 18, 2026 |
+| Arc 1: On-device AI | 10 | Oct 19 → Dec 27, 2026 | ~late Dec 2026 |
+| Arc 2: iOS system design | 9 | Dec 28 → Feb 28, 2027 | ~end Feb 2027 |
+| **Depth complete** | **31** | | **~end Feb 2027** |
 
 ## The 6 arcs (60 lessons)
 
