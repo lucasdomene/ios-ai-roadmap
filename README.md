@@ -25,13 +25,15 @@ No rush. One Depth lesson per week, with a break for a wedding (Sep 5-13). The p
 | Arc 0: Core iOS refresh | 12 | Jul 27 → Oct 25, 2026 | ~Oct 25, 2026 |
 | Arc 1: On-device AI | 10 | Oct 26 → Jan 3, 2027 | ~early Jan 2027 |
 | Arc 2: iOS system design | 9 | Jan 4 → Mar 7, 2027 | ~early Mar 2027 |
-| **Depth complete** | **31** | | **~early Mar 2027** |
+| Arc 3: Systems & tech selection | 10 | Mar 8 → May 16, 2027 | ~mid-May 2027 |
+| **Depth complete** | **41** | | **~mid-May 2027** |
 
-## The 6 arcs (60 lessons)
+## The 7 arcs (70 lessons)
 
 - **Arc 0: Core iOS refresh** (12) : modern SwiftUI, state/data flow, navigation, async/await + structured concurrency + actors, `@Observable`, async `URLSession`, SwiftData, modern Swift, Swift Testing.
 - **Arc 1: On-device AI** (10) : Foundation Models (`@Generable`, tool calling, streaming, fallbacks), on-device vs Private Cloud Compute routing, App Intents, hardening.
 - **Arc 2: iOS system design** (9) : the 7-phase framework + walkthroughs (image cache, feed, chat, offline sync, analytics SDK, real-time ticker) + a timed mock.
+- **Arc 3: Systems & tech selection** (10) : full-stack systems + when-to-use-what: request path, databases, edge vs server, caching, async/queues, realtime, API design, auth, distributed system-design format. Lab: Resenha + Pray.
 - **Currency / awareness** (8) : Liquid Glass, accessibility, SwiftUI-first with UIKit islands, agentic tooling, UI testing + CI/CD.
 - **Edge** (8) : AI orchestration workflow, context engineering, AI code review, the AI-assisted coding interview format, differentiator narrative.
 - **Readiness** (13) : DSA as patterns (Blind 75 / NeetCode, solved in Swift), timed live coding, org-scope STAR stories.
